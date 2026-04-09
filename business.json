@@ -1,0 +1,77 @@
+
+{
+  "name": "305 Luxury Rentals",
+  "overview": "305 Luxury Rentals is a Miami-based luxury rental company that provides high-end yacht charters, exotic cars, and mansion rentals. They specialize in creating full 360-degree Miami lifestyle experiences for special events including bachelorette parties, birthdays, and gender reveals.",
+  "websiteUrl": "https://305luxuryrentals.com/",
+  "brandValues": ["Exceptional customer care", "Honesty", "First class service", "Attention to detail"],
+  "visualAesthetics": ["Miami Opulence", "High-Octane", "Gold Standard", "VIP Exclusivity", "Cinematic Glamour"],
+  "toneOfVoice": ["Professional", "Upscale", "Celebratory", "Exciting"],
+  "fonts": ["oswald", "nanum myeongjo"],
+  "campaigns": [{
+    "creatives": [{
+      "title": "Own the Long Weekend.",
+      "versions": [{
+        "fileName": "resource_876nP5iN2St8c_ez-O-k7Y.png"
+      }]
+    }, {
+      "title": "First, Rule the Road.",
+      "versions": [{
+        "fileName": "resource_8jaeYpbjTJ27Slc7c1mke5.png"
+      }]
+    }, {
+      "title": "Then, Own the Ocean.",
+      "versions": [{
+        "fileName": "resource_9GoDEBTlzLYb2zGUjbL4Ht.png"
+      }]
+    }, {
+      "title": "The Ultimate 305 Fleet.",
+      "versions": [{
+        "fileName": "resource_aWfsRGGESUH38SBsRnEkgp.png"
+      }]
+    }]
+  }, {
+    "creatives": [{
+      "title": "Live the 305 Standard",
+      "versions": [{
+        "fileName": "resource_ahGnew5aMDYarSbR9jGkaA.png"
+      }]
+    }, {
+      "title": "Command the Coastline",
+      "versions": [{
+        "fileName": "resource_bgzUWAFLwyweXmh9kfZ4sj.png"
+      }]
+    }, {
+      "title": "Arrive in Absolute Power",
+      "versions": [{
+        "fileName": "resource_aJuu20D3EGe713eGa8A_im.png"
+      }]
+    }, {
+      "title": "Elevated Group Transit",
+      "versions": [{
+        "fileName": "resource_bQKn89pQeIWaNQmGxor_q2.png"
+      }]
+    }]
+  }, {
+    "creatives": [{
+      "title": "Own the Miami Horizon.",
+      "versions": [{
+        "fileName": "resource_94AOiUNdtGS8rPIBOjL4yw.png"
+      }]
+    }, {
+      "title": "Phase I: The Grand Arrival",
+      "versions": [{
+        "fileName": "resource_bXELVUF9Dx579sRWCE5_zl.png"
+      }]
+    }, {
+      "title": "Phase II: Atlantic Freedom",
+      "versions": [{
+        "fileName": "resource_8ovXCVZtcpp2VPvEhTe_jN.png"
+      }]
+    }, {
+      "title": "Phase III: The After Party",
+      "versions": [{
+        "fileName": "resource_91BpcKZQiY6fZWyyucFOhg.png"
+      }]
+    }]
+  }]
+}

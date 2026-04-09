@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>305 Luxury Rentals — Miami Yacht Charters, Exotic Cars & Mansion Rentals</title>
+  <meta name="description" content="Miami's premier luxury rental company. Yacht charters, exotic cars, and mansion rentals for bachelorettes, birthdays, gender reveals & corporate events. 5-star rated.">
+  <meta property="og:title" content="305 Luxury Rentals — Own the Miami Horizon">
+  <meta property="og:description" content="Yacht charters, exotic cars & mansion rentals for Miami's most unforgettable events.">
+  <meta property="og:url" content="https://305luxuryrentals.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #060d1a;
+      color: #e8edf3;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ── TOKENS ── */
+    :root {
+      --gold: #C9A84C;
+      --gold-dark: #A37B2A;
+      --gold-dim: rgba(201,168,76,0.15);
+      --navy: #060d1a;
+      --navy-2: #080f1c;
+      --navy-3: #0a1220;
+      --white: #ffffff;
+      --text: rgba(255,255,255,0.82);
+      --text-muted: rgba(255,255,255,0.48);
+      --text-dim: rgba(255,255,255,0.24);
+      --border: rgba(255,255,255,0.07);
+      --border-gold: rgba(201,168,76,0.2);
+      --font-display: 'Oswald', sans-serif;
+      --font-serif: 'Nanum Myeongjo', serif;
+    }
+
+    /* ── NAVIGATION ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 68px;
+      background: rgba(6,13,26,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-gold);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo img {
+      height: 38px;
+      width: auto;
+    }
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .nav-logo-text span {
+      color: var(--text-muted);
+      font-weight: 400;
+      font-size: 12px;
+      display: block;
+      letter-spacing: 0.18em;
+      margin-top: -2px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 640px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+    }
+    .hero-video-wrap video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(6,13,26,1) 0%,
+        rgba(6,13,26,0.55) 40%,
+        rgba(6,13,26,0.25) 70%,
+        rgba(6,13,26,0.4) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 24px;
+      max-width: 780px;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 8vw, 88px);
+      font-weight: 700;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      margin-bottom: 10px;
+      text-shadow: 0 4px 40px rgba(0,0,0,0.4);
+    }
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-size: clamp(16px, 2.5vw, 22px);
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 18px;
+      letter-spacing: 0.02em;
+    }
+    .hero-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      letter-spacing: 0.02em;
+      line-height: 1.75;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 15px 32px;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.78);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-scroll-hint span {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--gold-dim);
+      border-top: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-gold);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border-right: 1px solid var(--border-gold);
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-icon {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 1.5;
+      flex-shrink: 0;
+    }
+
+    /* ── SECTION COMMON ── */
+    .section { padding: 88px 40px; }
+    .section-alt { background: var(--navy-2); }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-eyebrow {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 50px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      line-height: 1.0;
+    }
+    .section-accent {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-style: italic;
+      color: var(--gold);
+      margin-top: 10px;
+    }
+    .section-sub {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+
+    /* ── SERVICES ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .service-card {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      cursor: pointer;
+      background: linear-gradient(180deg, #0c1625 0%, #08101d 100%);
+    }
+    .service-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center top;
+      transition: transform 0.6s ease;
+    }
+    .service-card:hover img { transform: scale(1.05); }
+    .service-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(6,13,26,0.92) 0%, rgba(6,13,26,0.2) 55%, transparent 100%);
+      transition: background 0.3s;
+    }
+    .service-card:hover .service-card-overlay {
+      background: linear-gradient(to top, rgba(6,13,26,0.95) 0%, rgba(6,13,26,0.4) 60%, rgba(6,13,26,0.1) 100%);
+    }
+    .service-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 32px 28px 14px;
+    }
+    .service-tag {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 8px;
+    }
+    .service-tagline {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 16px;
+    }
+    .service-link {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid rgba(201,168,76,0.4);
+      padding-bottom: 2px;
+      display: inline-block;
+      transition: border-color 0.2s;
+    }
+    .service-card:hover .service-link { border-color: var(--gold); }
+
+    /* ── FLEET ── */
+    .fleet-container { max-width: 1280px; margin: 0 auto; }
+    .fleet-track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 4px 4px 20px;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+    }
+    .fleet-track::-webkit-scrollbar { display: none; }
+    .yacht-card {
+      flex-shrink: 0;
+      width: 280px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+      scroll-snap-align: start;
+    }
+    .yacht-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-3px);
+    }
+    .yacht-thumb {
+      height: 190px;
+      overflow: hidden;
+      position: relative;
+    }
+    .yacht-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .yacht-card:hover .yacht-thumb img { transform: scale(1.06); }
+    .yacht-info { padding: 18px 18px 16px; }
+    .yacht-name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .yacht-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+    }
+    .yacht-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+    .yacht-price {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+    .yacht-price sub {
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+    .yacht-btn {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border-gold);
+      padding: 6px 14px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .yacht-card:hover .yacht-btn { background: var(--gold-dim); }
+    .fleet-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* ── EXPERIENCE (PHASES) ── */
+    .experience { background: var(--navy-3); }
+    .phases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .phase-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #0c1625 0%, #08101d 100%);
+    }
+    .phase-card img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: contain;
+      object-position: center top;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .phase-card:hover img { transform: scale(1.02); }
+    .phase-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(6,13,26,0.9) 0%, rgba(6,13,26,0.1) 70%);
+    }
+    .phase-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 28px 24px;
+    }
+    .phase-num {
+      font-family: var(--font-serif);
+      font-size: 11px;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 6px;
+      letter-spacing: 0.08em;
+    }
+    .phase-name {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #fff;
+      line-height: 1.1;
+    }
+    .phase-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+
+    /* ── EVENTS ── */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .event-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 32px 20px 28px;
+      text-align: center;
+      transition: border-color 0.25s, background 0.25s;
+      cursor: pointer;
+    }
+    .event-card:hover {
+      border-color: var(--border-gold);
+      background: var(--gold-dim);
+    }
+    .event-icon {
+      margin: 0 auto 16px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gold-dim);
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .event-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .event-name {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .event-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── BRAND VALUES ── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      max-width: 1100px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .value-item {
+      background: var(--navy-2);
+      padding: 36px 28px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .value-item:hover { background: var(--navy-3); }
+    .value-number {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .value-name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .value-accent {
+      font-family: var(--font-serif);
+      font-size: 12px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── CAMPAIGN STRIP ── */
+    .campaign-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1280px;
+      margin: 0 auto;
+      gap: 2px;
+    }
+    .campaign-card {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      cursor: pointer;
+    }
+    .campaign-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+    .campaign-card:hover img { transform: scale(1.04); }
+    .campaign-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(6,13,26,0.75) 0%, transparent 60%);
+    }
+    .campaign-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 28px 28px;
+    }
+    .campaign-label {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .campaign-title {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    /* ── BOOKING CTA ── */
+    .booking-cta {
+      background: linear-gradient(180deg, var(--navy-2) 0%, var(--navy) 100%);
+      border-top: 1px solid var(--border-gold);
+      padding: 96px 40px;
+      text-align: center;
+    }
+    .cta-eyebrow {
+      font-family: var(--font-display);
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 6vw, 68px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      line-height: 1.0;
+      margin-bottom: 12px;
+    }
+    .cta-tagline {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .cta-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto 44px;
+      line-height: 1.8;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 15px 32px;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: opacity 0.2s;
+    }
+    .btn-whatsapp:hover { opacity: 0.9; }
+    .btn-call {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.72);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 15px 32px;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-call:hover { border-color: var(--gold); color: var(--gold); }
+    .cta-availability {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #030810;
+      padding: 56px 40px 0;
+      border-top: 1px solid var(--border);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-brand-logo img {
+      height: 42px;
+      width: auto;
+      margin-bottom: 14px;
+    }
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .footer-tagline {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .footer-col ul li {
+      margin-bottom: 8px;
+    }
+    .footer-col ul li a {
+      font-size: 12px;
+      color: var(--text-muted);
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+    }
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-legal a {
+      font-size: 11px;
+      color: var(--text-dim);
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: var(--text-muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { aspect-ratio: 4/3; }
+      .phases-grid { grid-template-columns: 1fr; }
+      .phase-card img { aspect-ratio: 16/9; }
+      .events-grid { grid-template-columns: repeat(2, 1fr); }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .campaign-strip { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav { padding: 0 20px; }
+      .section { padding: 64px 20px; }
+      .trust-item { padding: 12px 16px; font-size: 9px; }
+      .events-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer { padding: 40px 20px 0; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav">
+    <a href="#" class="nav-logo">
+      <img src="logo.png" alt="305 Luxury Rentals">
+      <div class="nav-logo-text">
+        305 Luxury
+        <span>Rentals</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#fleet">Yachts</a></li>
+      <li><a href="#services">Cars</a></li>
+      <li><a href="#services">Mansions</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Book Now</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-video-wrap">
+      <video autoplay muted loop playsinline poster="public/video/hero-poster.jpg">
+        <source src="public/video/hero.webm" type="video/webm">
+        <source src="public/video/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Miami &middot; Biscayne Bay &middot; Premium Experiences</div>
+      <h1 class="hero-title">Own The<br>Miami Horizon</h1>
+      <div class="hero-tagline">Live the 305 Standard.</div>
+      <p class="hero-sub">Luxury yacht charters, exotic cars &amp; mansion rentals for Miami's most unforgettable celebrations.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Book Your Experience</a>
+        <a href="#fleet" class="btn-outline">Explore Our Fleet</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── TRUST BAR ── -->
+  <div class="trust-bar">
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Professional Captain &amp; Crew
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-6 4.5 2.5 7L12 17l-6.5 3.5L8 13 2 8.5h7z"/></svg>
+      5-Star Rated Service
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      First Class Experience
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      Available 7 Days a Week
+    </div>
+  </div>
+
+  <!-- ── SERVICES ── -->
+  <section id="services" class="section" style="padding: 0;">
+    <div class="services-grid">
+
+      <!-- Yacht Charters -->
+      <div class="service-card">
+        <img src="assets/resource_876nP5iN2St8c_ez-O-k7Y.png" alt="Luxury Yacht Charters Miami" loading="lazy">
+      </div>
+
+      <!-- Exotic Cars -->
+      <div class="service-card">
+        <img src="assets/resource_ahGnew5aMDYarSbR9jGkaA.png" alt="Exotic Car Rentals Miami" loading="lazy">
+      </div>
+
+      <!-- Mansion Rentals -->
+      <div class="service-card">
+        <img src="assets/resource_aJuu20D3EGe713eGa8A_im.png" alt="Luxury Mansion Rentals Miami" loading="lazy">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FLEET ── -->
+  <section id="fleet" class="section section-alt">
+    <div class="fleet-container">
+      <div class="section-header">
+        <div class="section-eyebrow">Our Fleet</div>
+        <div class="section-title">Find Your<br>Perfect Yacht</div>
+        <div class="section-accent">The ultimate 305 fleet.</div>
+        <div class="section-sub">9 luxury vessels — from a 40' cruiser to a 120' Technomar superyacht — all with captain, fuel, taxes, ice, water &amp; soft drinks included.</div>
+      </div>
+      <div class="fleet-track">
+
+        <div class="yacht-card">
+          <div class="yacht-thumb">
+            <img src="assets/yatchs/official/55-sea-ray-sedan-bridge.webp" alt="55ft Sea Ray Sedan Bridge" loading="lazy">
+          </div>
+          <div class="yacht-info">
+            <div class="yacht-name">55' Sea Ray Sedan Bridge</div>
+            <div class="yacht-meta">Up to 13 guests &middot; Captain, Fuel, Taxes, Ice, Water &amp; Soft Drinks</div>
+            <div class="yacht-footer">
+              <div class="yacht-price">Contact <sub>for pricing</sub></div>
+              <a href="#contact" class="yacht-btn">Book Now &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="yacht-card">
+          <div class="yacht-thumb">
+            <img src="assets/yatchs/official/40-sea-ray-sundancer.webp" alt="40ft Sea Ray Sundancer" loading="lazy">
+          </div>
+          <div class="yacht-info">
+            <div class="yacht-name">40' Sea Ray Sundancer</div>
+            <div class="yacht-meta">Up to 13 guests &middot; Captain, Fuel, Taxes, Ice, Water &amp; Soft Drinks</div>
+            <div class="yacht-footer">
+              <div class="yacht-price">Contact <sub>for pricing</sub></div>
+              <a href="#contact" class="yacht-btn">Book Now &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="yacht-card">
+          <div class="yacht-thumb">
+            <img src="assets/yatchs/official/50-cruiser-yachts.webp" alt="50ft Cruiser Yachts" loading="lazy">
+          </div>
+          <div class="yacht-info">
+            <div class="yacht-name">50' Cruiser Yachts</div>
+            <div class="yacht-meta">Up to 13 guests &middot; Captain, Fuel, Taxes, Ice, Water &amp; Soft Drinks</div>
+            <div class="yacht-footer">
+              <div class="yacht-price">Contact <sub>for pricing</sub></div>
+              <a href="#contact" class="yacht-btn">Book Now &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="yacht-card">
+          <div class="yacht-thumb">
+            <img src="assets/yatchs/official/55-sea-ray-sundancer.webp" alt="55ft Sea Ray Sundancer" loading="lazy">
+          </div>
+          <div class="yacht-info">
+            <div class="yacht-name">55' Sea Ray Sundancer</div>
+            <div class="yacht-meta">Up to 13 guests &middot; Captain, Fuel, Taxes, Ice, Water &amp; Soft Drinks</div>
+            <div class="yacht-footer">
+              <div class="yacht-price">Contact <sub>for pricing</sub></div>
+              <a href="#contact" class="yacht-btn">Book Now &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="yacht-card">
+          <div class="yacht-thumb">
+            <img src="assets/yatchs/official/50-azimut.webp" alt="50ft Azimut" loading="lazy">
+          </div>
+          <div class="yacht-info">
+            <div class="yacht-name">50' Azimut</div>
+            <div class="yacht-meta">Up to 13 guests &middot; Captain, Fuel, Taxes, Ice, Water &amp; Soft Drinks</div>
+            <div class="yacht-footer">
+              <div class="yacht-price">Contact <sub>for pricing</sub></div>
+              <a href="#contact" class="yacht-btn">Book Now &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="yacht-card">
+          <div class="yacht-thumb">
+            <img src="assets/yatchs/official/50-carver.webp" alt="50ft Carver" loading="lazy">
+          </div>
+          <div class="yacht-info">
+            <div class="yacht-name">50' Carver</div>
+            <div class="yacht-meta">Up to 13 guests &middot; Captain, Fuel, Taxes, Ice, Water &amp; Soft Drinks</div>
+            <div class="yacht-footer">
+              <div class="yacht-price">Contact <sub>for pricing</sub></div>
+              <a href="#contact" class="yacht-btn">Book Now &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="yacht-card">
+          <div class="yacht-thumb">
+            <img src="assets/yatchs/official/70-sunseeker.webp" alt="70ft Sunseeker" loading="lazy">
+          </div>
+          <div class="yacht-info">
+            <div class="yacht-name">70' Sunseeker</div>
+            <div class="yacht-meta">Up to 13 guests &middot; Captain, Fuel, Taxes, Ice, Water &amp; Soft Drinks</div>
+            <div class="yacht-footer">
+              <div class="yacht-price">Contact <sub>for pricing</sub></div>
+              <a href="#contact" class="yacht-btn">Book Now &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="yacht-card">
+          <div class="yacht-thumb">
+            <img src="assets/yatchs/official/90-azimut.webp" alt="90ft Azimut Superyacht" loading="lazy">
+          </div>
+          <div class="yacht-info">
+            <div class="yacht-name">90' Azimut</div>
+            <div class="yacht-meta">Up to 13 guests &middot; Captain, Fuel, Taxes, Ice, Water &amp; Soft Drinks</div>
+            <div class="yacht-footer">
+              <div class="yacht-price">Contact <sub>for pricing</sub></div>
+              <a href="#contact" class="yacht-btn">Book Now &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="yacht-card">
+          <div class="yacht-thumb">
+            <img src="assets/yatchs/official/120-technomar.webp" alt="120ft Technomar Superyacht" loading="lazy">
+          </div>
+          <div class="yacht-info">
+            <div class="yacht-name">120' Technomar</div>
+            <div class="yacht-meta">Up to 13 guests &middot; Captain, Fuel, Taxes, Ice, Water &amp; Soft Drinks</div>
+            <div class="yacht-footer">
+              <div class="yacht-price">Contact <sub>for pricing</sub></div>
+              <a href="#contact" class="yacht-btn">Book Now &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="fleet-cta">
+        <a href="#contact" class="btn-primary">Request Full Fleet Catalog</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE PHASES ── -->
+  <section class="section experience" style="padding: 0; overflow: hidden;">
+    <div style="text-align:center; padding: 72px 40px 56px;">
+      <div class="section-eyebrow">The 305 Experience</div>
+      <div class="section-title">Own the Long Weekend</div>
+      <div class="section-accent">Phase by phase. Unforgettable from start to finish.</div>
+    </div>
+    <div class="phases-grid">
+      <div class="phase-card">
+        <img src="assets/resource_bXELVUF9Dx579sRWCE5_zl.png" alt="Phase I: The Grand Arrival" loading="lazy">
+      </div>
+      <div class="phase-card">
+        <img src="assets/resource_8ovXCVZtcpp2VPvEhTe_jN.png" alt="Phase II: Atlantic Freedom" loading="lazy">
+      </div>
+      <div class="phase-card">
+        <img src="assets/resource_91BpcKZQiY6fZWyyucFOhg.png" alt="Phase III: The After Party" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EVENTS ── -->
+  <section id="events" class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">Special Events</div>
+      <div class="section-title">Every Celebration<br>Elevated</div>
+      <div class="section-accent">We specialize in making it unforgettable.</div>
+    </div>
+    <div class="events-grid">
+
+      <div class="event-card">
+        <div class="event-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93s3.06-7.44 7-7.93v15.86zm2-15.86c1.03.13 2 .45 2.87.93H13v-.93zM13 7h5.24c.25.31.48.65.68 1H13V7zm0 3h6.74c.08.32.15.65.19 1H13v-1zm0 9.93V19h2.87c-.87.48-1.84.8-2.87.93zM18.24 17H13v-1h5.92c-.2.35-.43.69-.68 1zm1.5-3H13v-1h6.93c-.04.35-.11.68-.19 1z"/></svg>
+        </div>
+        <div class="event-name">Bachelorette</div>
+        <div class="event-desc">Send her off in ultimate style on the waters of Biscayne Bay.</div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18A9 9 0 0 0 12 3zM8 11h8v2H8zm0 4h8v2H8zm2-8h4v2h-4z"/></svg>
+        </div>
+        <div class="event-name">Birthdays</div>
+        <div class="event-desc">Your birthday, your way — yachts, cars, mansions, all of it.</div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <div class="event-name">Gender Reveals</div>
+        <div class="event-desc">A moment this special deserves a backdrop that matches the joy.</div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 7H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-9 8H9v2H7v-2H5v-2h2v-2h2v2h2v2zm5-1a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm3 2a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM1 5h20v2H1z"/></svg>
+        </div>
+        <div class="event-name">Corporate Events</div>
+        <div class="event-desc">Impress clients and reward teams with a 305 Luxury experience.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── BRAND VALUES ── -->
+  <section class="section section-alt">
+    <div class="section-header">
+      <div class="section-eyebrow">Our Standard</div>
+      <div class="section-title">The 305<br>Difference</div>
+      <div class="section-accent">Every detail. Every time.</div>
+    </div>
+    <div class="values-grid">
+      <div class="value-item">
+        <div class="value-number">01</div>
+        <div class="value-name">Exceptional<br>Customer Care</div>
+        <div class="value-accent">From first call to final bow.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-number">02</div>
+        <div class="value-name">Honesty</div>
+        <div class="value-accent">Transparent pricing, no surprises.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-number">03</div>
+        <div class="value-name">First Class<br>Service</div>
+        <div class="value-accent">Every vessel. Every rental.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-number">04</div>
+        <div class="value-name">Attention<br>to Detail</div>
+        <div class="value-accent">The small things make the memory.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CAMPAIGN STRIP ── -->
+  <section class="section" style="padding: 0; overflow: hidden;">
+    <div class="campaign-strip">
+      <div class="campaign-card">
+        <img src="assets/resource_876nP5iN2St8c_ez-O-k7Y.png" alt="Own the Long Weekend" loading="lazy">
+        <div class="campaign-overlay"></div>
+        <div class="campaign-content">
+          <div class="campaign-label">The 305 Life</div>
+          <div class="campaign-title">Own the Long<br>Weekend.</div>
+        </div>
+      </div>
+      <div class="campaign-card">
+        <img src="assets/resource_94AOiUNdtGS8rPIBOjL4yw.png" alt="Own the Miami Horizon" loading="lazy">
+        <div class="campaign-overlay"></div>
+        <div class="campaign-content">
+          <div class="campaign-label">Miami Luxury</div>
+          <div class="campaign-title">Command the<br>Coastline.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BOOKING CTA ── -->
+  <section id="contact" class="booking-cta">
+    <div class="cta-eyebrow">Ready to Experience the 305 Standard?</div>
+    <div class="cta-title">Book Your<br>Experience</div>
+    <div class="cta-tagline">Arrive in Absolute Power.</div>
+    <p class="cta-sub">Contact us today to customize your perfect Miami luxury experience. Our team responds fast — usually within the hour.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/13052000305" class="btn-whatsapp" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us
+      </a>
+      <a href="tel:+13052000305" class="btn-call">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+        (305) 200-0305
+      </a>
+    </div>
+    <div class="cta-availability">Available 7 Days a Week &nbsp;&middot;&nbsp; Miami, FL &nbsp;&middot;&nbsp; Biscayne Bay</div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand-name">305 Luxury Rentals</div>
+        <div class="footer-tagline">"Miami Opulence. Gold Standard.<br>VIP Exclusivity. Cinematic Glamour."</div>
+        <div style="font-size:11px; color: var(--text-dim); letter-spacing:0.04em; line-height:1.7;">
+          Miami, Florida<br>
+          Biscayne Bay &amp; Surrounding Areas
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="#fleet">Yacht Charters</a></li>
+          <li><a href="#services">Exotic Cars</a></li>
+          <li><a href="#services">Mansion Rentals</a></li>
+          <li><a href="#events">Event Packages</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Events</div>
+        <ul>
+          <li><a href="#events">Bachelorette Parties</a></li>
+          <li><a href="#events">Birthdays</a></li>
+          <li><a href="#events">Gender Reveals</a></li>
+          <li><a href="#events">Corporate Events</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <ul>
+          <li><a href="https://wa.me/13052000305" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="tel:+13052000305">(305) 200-0305</a></li>
+          <li><a href="https://305luxuryrentals.com" target="_blank" rel="noopener">305luxuryrentals.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 305 Luxury Rentals. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
