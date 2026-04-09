@@ -336,19 +336,21 @@
     }
     .service-card {
       position: relative;
-      aspect-ratio: 3/4;
+      aspect-ratio: 9/16;
       overflow: hidden;
       cursor: pointer;
-      background: linear-gradient(180deg, #0c1625 0%, #08101d 100%);
+      background: #060d1a;
     }
-    .service-card img {
+    .service-card video {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      object-position: center top;
+      object-fit: cover;
+      object-position: center;
       transition: transform 0.6s ease;
     }
-    .service-card:hover img { transform: scale(1.05); }
+    .service-card:hover video { transform: scale(1.04); }
     .service-card-overlay {
       position: absolute;
       inset: 0;
@@ -869,7 +871,7 @@
     @media (max-width: 1024px) {
       .nav-links { display: none; }
       .services-grid { grid-template-columns: 1fr; }
-      .service-card { aspect-ratio: 4/3; }
+      .service-card { aspect-ratio: 3/4; }
       .phases-grid { grid-template-columns: 1fr; }
       .phase-card img { aspect-ratio: 16/9; }
       .events-grid { grid-template-columns: repeat(2, 1fr); }
@@ -962,17 +964,26 @@
 
       <!-- Yacht Charters -->
       <div class="service-card">
-        <img src="assets/resource_876nP5iN2St8c_ez-O-k7Y.png" alt="Luxury Yacht Charters Miami" loading="lazy">
+        <video autoplay muted loop playsinline poster="public/video/campaign/campaign1-poster.jpg">
+          <source src="public/video/campaign/campaign1.webm" type="video/webm">
+          <source src="public/video/campaign/campaign1.mp4" type="video/mp4">
+        </video>
       </div>
 
       <!-- Exotic Cars -->
       <div class="service-card">
-        <img src="assets/resource_ahGnew5aMDYarSbR9jGkaA.png" alt="Exotic Car Rentals Miami" loading="lazy">
+        <video autoplay muted loop playsinline poster="public/video/campaign/campaign2-poster.jpg">
+          <source src="public/video/campaign/campaign2.webm" type="video/webm">
+          <source src="public/video/campaign/campaign2.mp4" type="video/mp4">
+        </video>
       </div>
 
       <!-- Mansion Rentals -->
       <div class="service-card">
-        <img src="assets/resource_aJuu20D3EGe713eGa8A_im.png" alt="Luxury Mansion Rentals Miami" loading="lazy">
+        <video autoplay muted loop playsinline poster="public/video/campaign/campaign3-poster.jpg">
+          <source src="public/video/campaign/campaign3.webm" type="video/webm">
+          <source src="public/video/campaign/campaign3.mp4" type="video/mp4">
+        </video>
       </div>
 
     </div>
