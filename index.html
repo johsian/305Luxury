@@ -871,7 +871,7 @@
     @media (max-width: 1024px) {
       .nav-links { display: none; }
       .services-grid { grid-template-columns: 1fr; }
-      .service-card { aspect-ratio: 3/4; }
+      .service-card { aspect-ratio: 9/16; }
       .phases-grid { grid-template-columns: 1fr; }
       .phase-card img { aspect-ratio: 16/9; }
       .events-grid { grid-template-columns: repeat(2, 1fr); }
@@ -882,7 +882,9 @@
     @media (max-width: 640px) {
       .nav { padding: 0 20px; }
       .section { padding: 64px 20px; }
-      .trust-item { padding: 12px 16px; font-size: 9px; }
+      .trust-bar { display: grid; grid-template-columns: 1fr 1fr; }
+      .trust-item { padding: 12px 14px; font-size: 9px; border-right: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold); justify-content: center; }
+      .trust-item:last-child { border-right: none; }
       .events-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
       .values-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
