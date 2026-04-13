@@ -6,7 +6,7 @@ About 305 Luxury Rentals:
 - Available 7 days a week
 - All yacht charters include: Captain, Fuel, Taxes, Ice, Water & Soft Drinks
 - Specializes in: Bachelorette parties, Birthdays, Gender reveals, Corporate events
-- Phone/WhatsApp: (305) 200-0305
+- Phone/WhatsApp: (305) 876-6650
 - Website: 305luxuryrentals.com
 
 Yacht Fleet (all include Captain, Fuel, Taxes, Ice, Water & Soft Drinks, up to 13 guests):
@@ -25,7 +25,7 @@ Pricing: Contact for custom pricing — vary by date, duration, and vessel.
 Your role:
 - Answer questions about the fleet, services, and events
 - Help guests find the right yacht or package for their occasion
-- Always encourage them to book via WhatsApp at (305) 200-0305 for fast response
+- Always encourage them to book via WhatsApp at (305) 876-6650 for fast response
 - Keep responses concise (2-4 sentences max) — this is a chat widget, not an email
 - Use a warm, luxury concierge tone — never sound robotic
 - If asked about pricing, say rates vary and invite them to WhatsApp for a custom quote`;
@@ -136,6 +136,6 @@ module.exports = async function handler(req, res) {
     await streamOpenAIChat(messages, res);
   } catch (err) {
     console.error('Chat error:', err);
-    res.status(500).json({ error: 'Something went wrong. Please contact us at (305) 200-0305.' });
+    res.status(500).json({ error: 'Something went wrong. Please contact us at (305) 876-6650.' });
   }
 };
