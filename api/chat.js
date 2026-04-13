@@ -46,7 +46,7 @@ export default async function handler(req, res) {
 
   try {
     const result = await streamText({
-      model: anthropic('claude-haiku-4.5'),
+      model: anthropic('claude-haiku-4-5-20251001'),
       system: SYSTEM_PROMPT,
       messages,
       maxTokens: 300,
