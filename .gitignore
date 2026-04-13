@@ -3,3 +3,6 @@
 .superpowers/
 .vscode/
 .vercel
+.env
+.env.*
+!.env.example
