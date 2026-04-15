@@ -97,14 +97,6 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // API key check — fail early with a friendly message
-  if (!process.env.RESEND_API_KEY) {
-    console.error('[contact] RESEND_API_KEY is not set');
-    return res.status(500).json({
-      error: 'Email service not configured. Please contact (305) 876-6650.',
-    });
-  }
-
   var body;
   try {
     body = typeof req.body === 'object' && req.body !== null ? req.body : JSON.parse(req.body);
@@ -125,6 +117,14 @@ module.exports = async function handler(req, res) {
   if (missing.length > 0) {
     return res.status(400).json({
       error: 'Missing required fields: ' + missing.join(', '),
+    });
+  }
+
+  // API key check — after validation so users get field errors first
+  if (!process.env.RESEND_API_KEY) {
+    console.error('[contact] RESEND_API_KEY is not set');
+    return res.status(500).json({
+      error: 'Email service not configured. Please contact (305) 876-6650.',
     });
   }
 
