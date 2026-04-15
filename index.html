@@ -1039,6 +1039,126 @@
       .campaign-strip { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+    /* ── TESTIMONIALS ── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-gold);
+      border-radius: 4px;
+      padding: 32px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .testimonial-card:hover {
+      background: var(--gold-dim);
+      border-color: rgba(201,168,76,0.4);
+    }
+    .testimonial-stars {
+      display: flex;
+      gap: 4px;
+    }
+    .star {
+      width: 16px;
+      height: 16px;
+      fill: var(--gold);
+      flex-shrink: 0;
+    }
+    .testimonial-quote {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.75;
+      flex: 1;
+      position: relative;
+      padding-left: 20px;
+    }
+    .testimonial-quote::before {
+      content: '\201C';
+      position: absolute;
+      left: 0;
+      top: -4px;
+      font-size: 32px;
+      line-height: 1;
+      color: var(--gold);
+      font-style: normal;
+      font-family: var(--font-serif);
+    }
+    .testimonial-footer {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+    .testimonial-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .testimonial-name {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #fff;
+    }
+    .testimonial-verified {
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-family: var(--font-display);
+      font-weight: 400;
+    }
+    .testimonials-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .testimonials-cta a {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid var(--border-gold);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .testimonials-cta a:hover {
+      color: #fff;
+      border-color: #fff;
+    }
+
+    @media (max-width: 1024px) {
+      .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
+
     @media (max-width: 640px) {
       .nav { padding: 0 20px; }
       .section { padding: 64px 20px; }
@@ -1047,6 +1167,7 @@
       .trust-item:last-child { border-right: none; }
       .events-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
       .values-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; gap: 14px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer { padding: 40px 20px 0; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
@@ -1419,6 +1540,78 @@
           <div class="campaign-title">Command the<br>Coastline.</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="section section-alt">
+    <div class="section-header">
+      <div class="section-eyebrow">Reviews</div>
+      <h2 class="section-title">Words From<br>The 305 Family</h2>
+      <div class="section-accent">Real clients. Real stories.</div>
+    </div>
+    <div class="testimonials-grid">
+
+      <!-- Card 1: David M. -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testimonial-quote">I enjoyed the ride so much. I came here with 6 of my family members and we had the best time! The boat is the perfect size! The boat driver is very nice and knows how to party! We each took turns driving the boat and we made a stop to swim with an amazing view. I'm definitely coming back!</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">DM</div>
+          <div class="testimonial-info">
+            <div class="testimonial-name">David M.</div>
+            <div class="testimonial-verified">Verified Guest &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Carl D. -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testimonial-quote">Had a great time on the awesome crew everyone had great communication very easy to work with made every second great. Highly recommend. Enjoyed the ride. Would love go back. Best pilot and co pilot we could have asked for. Very helpful, Thank you Pedro &amp; Alan!</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">CD</div>
+          <div class="testimonial-info">
+            <div class="testimonial-name">Carl D.</div>
+            <div class="testimonial-verified">Verified Guest &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Solieth H. -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testimonial-quote">Excellent service, have a great day, I highly recommend it 😉😉😉 The best! I had the best birthday of my life! The Crew made my day one spectacular. The lowest prices I found in the area. I recommend them 100%! Here partying, the best service, English, Spanish ... without a doubt the best option!</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">SH</div>
+          <div class="testimonial-info">
+            <div class="testimonial-name">Solieth H.</div>
+            <div class="testimonial-verified">Verified Guest &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="testimonials-cta">
+      <a href="https://goo.gl/maps/ByrQzuFhy1EpLaqRA" target="_blank" rel="noopener noreferrer">See all reviews on Google &rarr;</a>
     </div>
   </section>
 
