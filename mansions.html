@@ -437,6 +437,34 @@
       transition: color 0.2s;
     }
     .footer-legal a:hover { color: var(--text-muted); }
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 28px 0 0;
+      border-top: 1px solid var(--border-gold);
+      margin-top: 28px;
+    }
+    .footer-social-label {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .footer-social-icons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .footer-social-icons a {
+      color: rgba(255,255,255,0.35);
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+    }
+    .footer-social-icons a:hover { color: var(--gold); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
@@ -591,6 +619,7 @@
       <div class="footer-col">
         <div class="footer-col-title">Contact</div>
         <ul>
+          <li><a href="mailto:info@305luxuryrentals.com">info@305luxuryrentals.com</a></li>
           <li><a href="https://wa.me/13058766650" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="tel:+13058766650">(305) 876-6650</a></li>
           <li><a href="https://305luxuryrentals.com" target="_blank" rel="noopener">305luxuryrentals.com</a></li>
@@ -598,11 +627,31 @@
       </div>
 
     </div>
+
+    <!-- ── SOCIAL FOLLOW ROW ── -->
+    <div class="footer-social">
+      <div class="footer-social-label">Follow</div>
+      <div class="footer-social-icons">
+        <a href="https://www.instagram.com/305_luxuryrentals/" target="_blank" rel="noopener noreferrer" aria-label="305 Luxury Rentals on Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.facebook.com/305luxuryrentals" target="_blank" rel="noopener noreferrer" aria-label="305 Luxury Rentals on Facebook">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@305luxuryrentals?_r=1&_t=ZP-95XvRHJ67KB" target="_blank" rel="noopener noreferrer" aria-label="305 Luxury Rentals on TikTok">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.16 8.16 0 0 0 4.77 1.52V7.12a4.85 4.85 0 0 1-1-.43z"/></svg>
+        </a>
+        <a href="https://x.com/luxuryrental305" target="_blank" rel="noopener noreferrer" aria-label="305 Luxury Rentals on X / Twitter">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L2.25 2.25h6.963l4.259 5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+    </div>
+
     <div class="footer-bottom">
       <div class="footer-copy">&copy; 2026 305 Luxury Rentals. All rights reserved.</div>
       <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
   </footer>

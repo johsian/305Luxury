@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exotic Cars | 305 Luxury Rentals</title>
-  <meta name="description" content="Miami&#39;s most exclusive exotic car fleet. Drive a Lamborghini, Rolls-Royce, Ferrari, or Porsche through Miami. Reserve yours today with 305 Luxury Rentals.">
-  <meta property="og:title" content="Exotic Cars | 305 Luxury Rentals">
-  <meta property="og:description" content="Arrive in power. Rent a Lamborghini, Rolls-Royce, Ferrari &amp; more in Miami.">
-  <meta property="og:url" content="https://305luxuryrentals.com/exotics.html">
+  <title>Privacy Policy | 305 Luxury Rentals</title>
+  <meta name="description" content="Privacy Policy for 305 Luxury Rentals — Miami's premier luxury rental experience.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;family=Nanum+Myeongjo:wght@400;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
   <style>
     /* ── RESET & BASE ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,17 +32,14 @@
       --navy: #060d1a;
       --navy-2: #080f1c;
       --navy-3: #0a1220;
-      --white: #ffffff;
-      --text: rgba(255,255,255,0.82);
-      --text-muted: rgba(255,255,255,0.48);
-      --text-dim: rgba(255,255,255,0.24);
-      --border: rgba(255,255,255,0.07);
-      --border-gold: rgba(201,168,76,0.2);
+      --text-muted: rgba(232,237,243,0.6);
+      --text-dim: rgba(232,237,243,0.35);
+      --border-gold: rgba(201,168,76,0.18);
       --font-display: 'Oswald', sans-serif;
       --font-serif: 'Nanum Myeongjo', serif;
     }
 
-    /* ── NAVIGATION ── */
+    /* ── NAV ── */
     .nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -112,324 +106,93 @@
     }
     .nav-cta:hover { opacity: 0.88; }
 
-    /* ── HERO (static, no video) ── */
-    .hero-static {
-      position: relative;
-      padding: 160px 40px 96px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(180deg, #030810 0%, #060d1a 60%, #08101d 100%);
-      border-bottom: 1px solid var(--border-gold);
-      text-align: center;
-      overflow: hidden;
-    }
-    .hero-static::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
+    /* ── LEGAL PAGE ── */
+    .legal-page {
       max-width: 780px;
+      margin: 0 auto;
+      padding: 120px 40px 80px;
     }
-    .hero-eyebrow {
+    .legal-page h1 {
       font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(48px, 8vw, 88px);
-      font-weight: 700;
-      line-height: 0.95;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: #fff;
-      margin-bottom: 18px;
-    }
-    .hero-tagline {
-      font-family: var(--font-serif);
-      font-size: clamp(15px, 2.5vw, 20px);
-      font-style: italic;
-      color: var(--gold);
-      margin-bottom: 36px;
-      letter-spacing: 0.02em;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      color: #fff;
-      font-family: var(--font-display);
-      font-size: 11px;
+      font-size: 36px;
       font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 15px 32px;
-      border-radius: 2px;
-      transition: opacity 0.2s;
-      display: inline-block;
-    }
-    .btn-primary:hover { opacity: 0.88; }
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,0.25);
-      color: rgba(255,255,255,0.78);
-      font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 14px 28px;
-      border-radius: 2px;
-      transition: border-color 0.2s, color 0.2s;
-      display: inline-block;
-    }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-    /* ── SECTION COMMON ── */
-    .section { padding: 88px 40px; }
-    .section-alt { background: var(--navy-2); }
-    .section-header { text-align: center; margin-bottom: 56px; }
-    .section-eyebrow {
-      font-family: var(--font-display);
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.35em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 14px;
+      margin-bottom: 8px;
     }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(32px, 5vw, 50px);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: #fff;
-      line-height: 1.0;
-    }
-    .section-accent {
-      font-family: var(--font-serif);
-      font-size: 16px;
-      font-style: italic;
-      color: var(--gold);
-      margin-top: 10px;
-    }
-    .section-sub {
-      margin-top: 14px;
+    .legal-draft-notice {
+      background: rgba(201,168,76,0.1);
+      border: 1px solid var(--border-gold);
+      border-radius: 4px;
+      padding: 12px 18px;
       font-size: 13px;
       color: var(--text-muted);
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.8;
+      margin-bottom: 40px;
+      line-height: 1.6;
     }
-
-    /* ── YACHT CARD (base pattern, kept for reference) ── */
-
-    /* ── CAR CARD ── */
-    .cars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .car-card {
-      background: rgba(255,255,255,0.035);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-      transition: border-color 0.25s, transform 0.25s;
-      display: flex;
-      flex-direction: column;
-    }
-    .car-card:hover {
-      border-color: var(--border-gold);
-      transform: translateY(-4px);
-    }
-    .car-thumb {
-      height: 210px;
-      overflow: hidden;
-      position: relative;
-      flex-shrink: 0;
-    }
-    .car-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-    .car-card:hover .car-thumb img { transform: scale(1.06); }
-    /* Styled placeholder for cars without photos */
-    .car-placeholder {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #0c1828 0%, #0a1220 50%, #060d1a 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      border-bottom: 1px solid var(--border-gold);
-    }
-    .car-placeholder-monogram {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      border: 1px solid var(--border-gold);
-      background: var(--gold-dim);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .legal-page h2 {
       font-family: var(--font-display);
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    .car-placeholder-label {
-      font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-    }
-    .car-info {
-      padding: 18px 18px 16px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .car-name {
-      font-family: var(--font-display);
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #fff;
-      margin-bottom: 6px;
-      line-height: 1.15;
-    }
-    .car-meta {
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
-      margin-bottom: 10px;
-    }
-    .car-blurb {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.7;
-      flex: 1;
-      margin-bottom: 16px;
-    }
-    .car-footer {
-      border-top: 1px solid var(--border);
-      padding-top: 12px;
-    }
-    .car-btn {
-      font-family: var(--font-display);
-      font-size: 9px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--gold);
-      border: 1px solid var(--border-gold);
-      padding: 8px 16px;
-      border-radius: 2px;
-      transition: background 0.2s;
-      display: inline-block;
+      margin: 36px 0 10px;
     }
-    .car-card:hover .car-btn { background: var(--gold-dim); }
+    .legal-page p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
 
     /* ── FOOTER ── */
     .footer {
-      background: #030810;
-      padding: 56px 40px 0;
-      border-top: 1px solid var(--border);
+      background: var(--navy-2);
+      padding: 60px 60px 0;
+      border-top: 1px solid var(--border-gold);
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.6fr 1fr 1fr 1fr;
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
       padding-bottom: 48px;
-      border-bottom: 1px solid var(--border);
     }
     .footer-brand-name {
       font-family: var(--font-display);
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
       color: var(--gold);
       margin-bottom: 10px;
     }
     .footer-tagline {
       font-family: var(--font-serif);
-      font-size: 13px;
-      font-style: italic;
-      color: var(--text-muted);
-      margin-bottom: 16px;
+      font-size: 12px;
+      color: var(--text-dim);
       line-height: 1.7;
+      margin-bottom: 16px;
     }
     .footer-col-title {
       font-family: var(--font-display);
-      font-size: 9px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
+      font-size: 10px;
       font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 14px;
     }
     .footer-col ul li {
       margin-bottom: 8px;
     }
     .footer-col ul li a {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--text-muted);
       transition: color 0.2s;
-      letter-spacing: 0.02em;
     }
     .footer-col ul li a:hover { color: var(--gold); }
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .footer-copy {
-      font-size: 11px;
-      color: var(--text-dim);
-      letter-spacing: 0.04em;
-    }
-    .footer-legal {
-      display: flex;
-      gap: 20px;
-    }
-    .footer-legal a {
-      font-size: 11px;
-      color: var(--text-dim);
-      transition: color 0.2s;
-    }
-    .footer-legal a:hover { color: var(--text-muted); }
     .footer-social {
       display: flex;
       align-items: center;
@@ -458,18 +221,37 @@
       align-items: center;
     }
     .footer-social-icons a:hover { color: var(--gold); }
+    .footer-bottom {
+      border-top: 1px solid var(--border-gold);
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-copy {
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+    }
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-legal a {
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: var(--text-muted); }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
+    @media (max-width: 900px) {
       .nav-links { display: none; }
-      .cars-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 640px) {
+    @media (max-width: 600px) {
       .nav { padding: 0 20px; }
-      .section { padding: 64px 20px; }
-      .hero-static { padding: 130px 20px 72px; }
-      .cars-grid { grid-template-columns: 1fr; }
+      .legal-page { padding: 100px 20px 60px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer { padding: 40px 20px 0; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
@@ -478,8 +260,6 @@
 </head>
 <body>
 
-  <!-- ── NAVIGATION ── -->
-  <!-- NOTE: Copy this same nav markup to index.html when adding unified navigation (Task N) -->
   <nav class="nav">
     <a href="index.html" class="nav-logo">
       <img src="logo.png" alt="305 Luxury Rentals">
@@ -488,245 +268,35 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#fleet">Yachts</a></li>
-      <li><a href="exotics.html" class="active">Exotics</a></li>
+      <li><a href="exotics.html">Exotics</a></li>
       <li><a href="mansions.html">Mansions</a></li>
     </ul>
     <a href="index.html#contact" class="nav-cta">Book Now</a>
   </nav>
 
-  <!-- ── HERO (static, no video) ── -->
-  <section class="hero-static">
-    <div class="hero-content">
-      <div class="hero-eyebrow">Miami &middot; Arrive in Power</div>
-      <h1 class="hero-title">Our Exotic Fleet</h1>
-      <div class="hero-tagline">Drive the extraordinary through Miami's most iconic streets.</div>
-      <div class="hero-actions">
-        <a href="index.html#contact" class="btn-primary">Book Your Experience</a>
-        <a href="index.html" class="btn-outline">Back to Home</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── EXOTIC CARS GRID ── -->
-  <section class="section section-alt">
-    <div class="section-header">
-      <div class="section-eyebrow">11 Vehicles</div>
-      <h2 class="section-title">Choose Your Machine</h2>
-      <div class="section-accent">Every key. Every curve. Every moment.</div>
-      <p class="section-sub">From open-top Lamborghinis to cloud-quiet Rolls-Royces, our fleet is curated for those who demand the extraordinary.</p>
+  <main class="legal-page">
+    <h1>Privacy Policy</h1>
+    <div class="legal-draft-notice">
+      Last updated: April 14, 2026. <strong>DRAFT</strong> — This is a template. Please replace with your finalized legal policy before publishing.
     </div>
 
-    <div class="cars-grid">
+    <h2>Information We Collect</h2>
+    <p>We collect information you provide directly to us when you submit an inquiry, book a rental, or contact us via our website, phone, or messaging platforms. This may include your name, email address, phone number, and event details.</p>
+    <p>We may also automatically collect certain information about your device and how you interact with our website, such as your IP address, browser type, and pages visited.</p>
 
-      <!-- 1. Range Rover Supercharged -->
-      <!-- TODO: Replace with actual vehicle photo -->
-      <div class="car-card">
-        <div class="car-thumb">
-          <div class="car-placeholder">
-            <div class="car-placeholder-monogram">R</div>
-            <div class="car-placeholder-label">Range Rover</div>
-          </div>
-        </div>
-        <div class="car-info">
-          <div class="car-name">Range Rover Supercharged</div>
-          <div class="car-meta">5 Seats &middot; 5 Luggage &middot; 5 Doors</div>
-          <div class="car-blurb">Contemporary design with distinctive front grille and commanding stance.</div>
-          <div class="car-footer">
-            <a href="index.html?vehicle=Range%20Rover%20Supercharged#contact" class="car-btn">Book Now &rarr;</a>
-          </div>
-        </div>
-      </div>
+    <h2>How We Use It</h2>
+    <p>We use the information we collect to process bookings, respond to inquiries, provide customer support, and send relevant communications about your reservation or our services.</p>
+    <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as necessary to fulfill your booking (e.g., payment processors).</p>
 
-      <!-- 2. Rolls Royce Dawn -->
-      <!-- TODO: Replace with actual vehicle photo -->
-      <div class="car-card">
-        <div class="car-thumb">
-          <div class="car-placeholder">
-            <div class="car-placeholder-monogram">R</div>
-            <div class="car-placeholder-label">Rolls-Royce</div>
-          </div>
-        </div>
-        <div class="car-info">
-          <div class="car-name">Rolls Royce Dawn</div>
-          <div class="car-meta">4 Seats &middot; 1 Luggage &middot; 2 Doors</div>
-          <div class="car-blurb">Convertible grand tourer &mdash; motorized roof deploys in 22 seconds.</div>
-          <div class="car-footer">
-            <a href="index.html?vehicle=Rolls%20Royce%20Dawn#contact" class="car-btn">Book Now &rarr;</a>
-          </div>
-        </div>
-      </div>
+    <h2>Your Rights</h2>
+    <p>You have the right to access, correct, or request deletion of your personal information at any time. You may also opt out of marketing communications by contacting us directly.</p>
+    <p>To exercise any of these rights, please reach out to us at <a href="mailto:info@305luxuryrentals.com" style="color: var(--gold);">info@305luxuryrentals.com</a>.</p>
 
-      <!-- 3. Lamborghini Aventador Roadster LP700-4 (confirmed live photo) -->
-      <div class="car-card">
-        <div class="car-thumb">
-          <img src="https://content.app-sources.com/s/1350989266656589/uploads/Cars/305LuxuryRentals_lambo1-5437871.jpg?format=webp" alt="Lamborghini Aventador Roadster LP700-4" loading="lazy">
-        </div>
-        <div class="car-info">
-          <div class="car-name">Lamborghini Aventador Roadster LP700-4</div>
-          <div class="car-meta">2 Seats &middot; 1 Luggage &middot; 2 Doors</div>
-          <div class="car-blurb">Uniquely designed geometric lines from removable roof to engine hood.</div>
-          <div class="car-footer">
-            <a href="index.html?vehicle=Lamborghini%20Aventador%20Roadster%20LP700-4#contact" class="car-btn">Book Now &rarr;</a>
-          </div>
-        </div>
-      </div>
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy or our data practices, please contact us at <a href="mailto:info@305luxuryrentals.com" style="color: var(--gold);">info@305luxuryrentals.com</a> or call <a href="tel:+13058766650" style="color: var(--gold);">(305) 876-6650</a>.</p>
+    <p>305 Luxury Rentals operates in Miami, Florida, serving Biscayne Bay and surrounding areas.</p>
+  </main>
 
-      <!-- 4. Lamborghini Huracán LP570-2 Spyder -->
-      <!-- TODO: Replace with actual vehicle photo -->
-      <div class="car-card">
-        <div class="car-thumb">
-          <div class="car-placeholder">
-            <div class="car-placeholder-monogram">L</div>
-            <div class="car-placeholder-label">Lamborghini</div>
-          </div>
-        </div>
-        <div class="car-info">
-          <div class="car-name">Lamborghini Hurac&aacute;n LP570-2 Spyder</div>
-          <div class="car-meta">2 Seats &middot; 1 Luggage &middot; 2 Doors</div>
-          <div class="car-blurb">Open-top V10 supercar &mdash; pure Italian performance theater.</div>
-          <div class="car-footer">
-            <a href="index.html?vehicle=Lamborghini%20Hurac%C3%A1n%20LP570-2%20Spyder#contact" class="car-btn">Book Now &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. Tesla Model X -->
-      <!-- TODO: Replace with actual vehicle photo -->
-      <div class="car-card">
-        <div class="car-thumb">
-          <div class="car-placeholder">
-            <div class="car-placeholder-monogram">T</div>
-            <div class="car-placeholder-label">Tesla</div>
-          </div>
-        </div>
-        <div class="car-info">
-          <div class="car-name">Tesla Model X</div>
-          <div class="car-meta">7 Seats &middot; 4 Luggage &middot; 5 Doors</div>
-          <div class="car-blurb">Falcon-wing electric SUV with 17-inch touchscreen and space for seven.</div>
-          <div class="car-footer">
-            <a href="index.html?vehicle=Tesla%20Model%20X#contact" class="car-btn">Book Now &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6. Mercedes-AMG C63 Cabriolet -->
-      <!-- TODO: Replace with actual vehicle photo -->
-      <div class="car-card">
-        <div class="car-thumb">
-          <div class="car-placeholder">
-            <div class="car-placeholder-monogram">M</div>
-            <div class="car-placeholder-label">Mercedes-AMG</div>
-          </div>
-        </div>
-        <div class="car-info">
-          <div class="car-name">Mercedes-AMG C63 Cabriolet</div>
-          <div class="car-meta">4 Seats &middot; 2 Luggage &middot; 2 Doors</div>
-          <div class="car-blurb">469-hp V8 with nine-speed paddle shift and open-sky driving.</div>
-          <div class="car-footer">
-            <a href="index.html?vehicle=Mercedes-AMG%20C63%20Cabriolet#contact" class="car-btn">Book Now &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 7. Rolls Royce Wraith -->
-      <!-- TODO: Replace with actual vehicle photo -->
-      <div class="car-card">
-        <div class="car-thumb">
-          <div class="car-placeholder">
-            <div class="car-placeholder-monogram">R</div>
-            <div class="car-placeholder-label">Rolls-Royce</div>
-          </div>
-        </div>
-        <div class="car-info">
-          <div class="car-name">Rolls Royce Wraith</div>
-          <div class="car-meta">4 Seats &middot; 4 Luggage &middot; 2 Doors</div>
-          <div class="car-blurb">Fastback coupe embodiment of power, style and drama.</div>
-          <div class="car-footer">
-            <a href="index.html?vehicle=Rolls%20Royce%20Wraith#contact" class="car-btn">Book Now &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 8. Ferrari 488 Spider -->
-      <!-- TODO: Replace with actual vehicle photo -->
-      <div class="car-card">
-        <div class="car-thumb">
-          <div class="car-placeholder">
-            <div class="car-placeholder-monogram">F</div>
-            <div class="car-placeholder-label">Ferrari</div>
-          </div>
-        </div>
-        <div class="car-info">
-          <div class="car-name">Ferrari 488 Spider</div>
-          <div class="car-meta">2 Seats &middot; 2 Luggage &middot; 2 Doors</div>
-          <div class="car-blurb">Turbocharged V8 roadster &mdash; prancing horse at its most thrilling.</div>
-          <div class="car-footer">
-            <a href="index.html?vehicle=Ferrari%20488%20Spider#contact" class="car-btn">Book Now &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 9. Lamborghini Urus -->
-      <!-- TODO: Replace with actual vehicle photo -->
-      <div class="car-card">
-        <div class="car-thumb">
-          <div class="car-placeholder">
-            <div class="car-placeholder-monogram">L</div>
-            <div class="car-placeholder-label">Lamborghini</div>
-          </div>
-        </div>
-        <div class="car-info">
-          <div class="car-name">Lamborghini Urus</div>
-          <div class="car-meta">7 Seats &middot; 4 Luggage &middot; 5 Doors</div>
-          <div class="car-blurb">The world's first Super Sport Utility Vehicle.</div>
-          <div class="car-footer">
-            <a href="index.html?vehicle=Lamborghini%20Urus#contact" class="car-btn">Book Now &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 10. Porsche 911 Turbo S Cabriolet -->
-      <!-- TODO: Replace with actual vehicle photo -->
-      <div class="car-card">
-        <div class="car-thumb">
-          <div class="car-placeholder">
-            <div class="car-placeholder-monogram">P</div>
-            <div class="car-placeholder-label">Porsche</div>
-          </div>
-        </div>
-        <div class="car-info">
-          <div class="car-name">Porsche 911 Turbo S Cabriolet</div>
-          <div class="car-meta">4 Seats &middot; 2 Luggage &middot; 2 Doors</div>
-          <div class="car-blurb">Iconic silhouette meets 640-hp twin-turbo performance.</div>
-          <div class="car-footer">
-            <a href="index.html?vehicle=Porsche%20911%20Turbo%20S%20Cabriolet#contact" class="car-btn">Book Now &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 11. Rolls-Royce Cullinan -->
-      <!-- TODO: Replace with actual vehicle photo -->
-      <div class="car-card">
-        <div class="car-thumb">
-          <div class="car-placeholder">
-            <div class="car-placeholder-monogram">R</div>
-            <div class="car-placeholder-label">Rolls-Royce</div>
-          </div>
-        </div>
-        <div class="car-info">
-          <div class="car-name">Rolls-Royce Cullinan</div>
-          <div class="car-meta">4 Seats &middot; 3 Luggage &middot; 5 Doors</div>
-          <div class="car-blurb">The first SUV Rolls-Royce has ever produced &mdash; effortless, everywhere.</div>
-          <div class="car-footer">
-            <a href="index.html?vehicle=Rolls-Royce%20Cullinan#contact" class="car-btn">Book Now &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── FOOTER ── -->
   <footer class="footer">
     <div class="footer-grid">
 
@@ -995,13 +565,11 @@
     }
   </style>
 
-  <!-- Bubble button -->
   <button class="chat-bubble" id="chatToggle" aria-label="Open chat">
     <svg class="chat-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
     <svg class="chat-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
   </button>
 
-  <!-- Chat drawer -->
   <div class="chat-drawer" id="chatDrawer" role="dialog" aria-label="305 Luxury Concierge">
     <div class="chat-header">
       <div class="chat-header-logo">305</div>
@@ -1096,7 +664,6 @@
           const { done, value } = await reader.read();
           if (done) break;
           const chunk = decoder.decode(value, { stream: true });
-          // Parse AI SDK data stream format
           for (const line of chunk.split('\n')) {
             if (line.startsWith('0:')) {
               try {
