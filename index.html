@@ -786,6 +786,167 @@
       color: var(--text-dim);
     }
 
+    /* ── CONTACT FORM ── */
+    .contact-form-wrap {
+      max-width: 680px;
+      margin: 56px auto 0;
+      text-align: left;
+    }
+    .contact-prefill-notice {
+      display: none;
+      font-family: var(--font-display);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border-gold);
+      border-radius: 2px;
+      padding: 10px 16px;
+      margin-bottom: 24px;
+      background: var(--gold-dim);
+    }
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .contact-form .field-full { grid-column: 1 / -1; }
+    .contact-form label {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 2px;
+      padding: 13px 14px;
+      color: var(--white);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      line-height: 1.4;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: var(--text-dim);
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.06);
+    }
+    .contact-form select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+    .contact-form select option {
+      background: #0a1220;
+      color: #fff;
+    }
+    .contact-form textarea { resize: vertical; min-height: 100px; }
+    .contact-form-consent {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .contact-form-consent input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      margin-top: 2px;
+      accent-color: var(--gold);
+      cursor: pointer;
+    }
+    .contact-form-consent span {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .contact-form-submit {
+      grid-column: 1 / -1;
+    }
+    .btn-submit {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #000;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      width: 100%;
+    }
+    .btn-submit:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    .contact-form-status {
+      grid-column: 1 / -1;
+      font-size: 12px;
+      padding: 4px 0;
+      min-height: 20px;
+    }
+    .contact-form-status.sending { color: var(--text-muted); }
+    .contact-form-status.error { color: #e57373; }
+    .contact-form-success {
+      border: 1px solid var(--border-gold);
+      border-radius: 2px;
+      padding: 32px;
+      text-align: center;
+      background: var(--gold-dim);
+    }
+    .contact-form-success p {
+      font-family: var(--font-display);
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      line-height: 1.7;
+    }
+    .contact-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 40px 0 32px;
+      color: var(--text-dim);
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .contact-divider::before,
+    .contact-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-gold);
+    }
+    @media (max-width: 600px) {
+      .contact-form { grid-template-columns: 1fr; }
+      .contact-form .field-full,
+      .contact-form-consent,
+      .contact-form-submit,
+      .contact-form-status { grid-column: 1; }
+    }
+
     /* ── FOOTER ── */
     .footer {
       background: #030810;
@@ -1278,6 +1439,86 @@
       </a>
     </div>
     <div class="cta-availability">Available 7 Days a Week &nbsp;&middot;&nbsp; Miami, FL &nbsp;&middot;&nbsp; Biscayne Bay</div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-wrap">
+      <div class="contact-divider">Or fill out the form below</div>
+
+      <div class="contact-prefill-notice" id="contactPrefillNotice"></div>
+
+      <div id="contactFormArea">
+        <form class="contact-form" id="contactForm" novalidate>
+          <input type="hidden" name="_hp" id="contactHp">
+          <input type="hidden" name="specificSelection" id="contactSpecificSelection">
+
+          <div>
+            <label for="contactName">Name <span style="color:var(--gold)">*</span></label>
+            <input type="text" id="contactName" name="name" placeholder="Your full name" required autocomplete="name">
+          </div>
+
+          <div>
+            <label for="contactEmail">Email <span style="color:var(--gold)">*</span></label>
+            <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required autocomplete="email">
+          </div>
+
+          <div>
+            <label for="contactPhone">Phone <span style="color:var(--gold)">*</span></label>
+            <input type="tel" id="contactPhone" name="phone" placeholder="(305) 000-0000" required autocomplete="tel">
+          </div>
+
+          <div>
+            <label for="contactDate">Preferred Date <span style="color:var(--gold)">*</span></label>
+            <input type="date" id="contactDate" name="preferredDate" required>
+          </div>
+
+          <div>
+            <label for="contactGuests">Guest Count <span style="color:var(--gold)">*</span></label>
+            <input type="number" id="contactGuests" name="guestCount" placeholder="Number of guests" min="1" required>
+          </div>
+
+          <div>
+            <label for="contactEventType">Event Type <span style="color:var(--gold)">*</span></label>
+            <select id="contactEventType" name="eventType" required>
+              <option value="" disabled selected>Select event type</option>
+              <option value="Bachelorette">Bachelorette</option>
+              <option value="Birthday">Birthday</option>
+              <option value="Gender Reveal">Gender Reveal</option>
+              <option value="Corporate">Corporate</option>
+              <option value="Anniversary">Anniversary</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="field-full">
+            <label for="contactInterest">Experience Interest <span style="color:var(--gold)">*</span></label>
+            <select id="contactInterest" name="experienceInterest" required>
+              <option value="" disabled selected>Select your interest</option>
+              <option value="Yacht Charter">Yacht Charter</option>
+              <option value="Exotic Car">Exotic Car</option>
+              <option value="Mansion">Mansion</option>
+              <option value="Multi-Experience Package">Multi-Experience Package</option>
+              <option value="Not Sure">Not Sure</option>
+            </select>
+          </div>
+
+          <div class="field-full">
+            <label for="contactMessage">Message (optional)</label>
+            <textarea id="contactMessage" name="message" placeholder="Tell us about your event, any special requests, or questions…" rows="4"></textarea>
+          </div>
+
+          <div class="contact-form-consent field-full">
+            <input type="checkbox" id="contactConsent" name="consent" required>
+            <span><label for="contactConsent">I agree to be contacted by 305 Luxury Rentals about my inquiry.</label></span>
+          </div>
+
+          <div class="contact-form-status" id="contactStatus" role="status" aria-live="polite"></div>
+
+          <div class="contact-form-submit">
+            <button type="submit" class="btn-submit" id="contactSubmit">Send Inquiry</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </section>
 
   <!-- ── FOOTER ── -->
@@ -1652,6 +1893,106 @@
       send.disabled = false;
       input.focus();
     }
+  </script>
+
+  <!-- ── CONTACT FORM LOGIC ── -->
+  <script>
+    (function () {
+      'use strict';
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var params = new URLSearchParams(location.search);
+        var vehicle = params.get('vehicle');
+        var property = params.get('property');
+        var selection = vehicle || property || '';
+
+        if (selection) {
+          var hiddenField = document.getElementById('contactSpecificSelection');
+          if (hiddenField) hiddenField.value = selection;
+
+          var notice = document.getElementById('contactPrefillNotice');
+          if (notice) {
+            notice.textContent = 'Interested in: ' + selection;
+            notice.style.display = 'block';
+          }
+
+          // Pre-select experience interest based on param type
+          var interestSelect = document.getElementById('contactInterest');
+          if (interestSelect) {
+            if (vehicle) {
+              interestSelect.value = 'Exotic Car';
+            } else if (property) {
+              interestSelect.value = 'Mansion';
+            }
+          }
+        }
+
+        var form = document.getElementById('contactForm');
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          // Basic JS validation on top of HTML5
+          var required = ['contactName', 'contactEmail', 'contactPhone', 'contactDate', 'contactGuests', 'contactEventType', 'contactInterest'];
+          var missing = required.some(function (id) {
+            var el = document.getElementById(id);
+            return !el || !el.value.trim();
+          });
+          var consent = document.getElementById('contactConsent');
+          if (missing || !consent || !consent.checked) {
+            setStatus('Please fill in all required fields and accept the consent checkbox.', 'error');
+            return;
+          }
+
+          var submitBtn = document.getElementById('contactSubmit');
+          submitBtn.disabled = true;
+          setStatus('Sending\u2026', 'sending');
+
+          var payload = {
+            name: document.getElementById('contactName').value.trim(),
+            email: document.getElementById('contactEmail').value.trim(),
+            phone: document.getElementById('contactPhone').value.trim(),
+            preferredDate: document.getElementById('contactDate').value,
+            guestCount: document.getElementById('contactGuests').value,
+            eventType: document.getElementById('contactEventType').value,
+            experienceInterest: document.getElementById('contactInterest').value,
+            specificSelection: document.getElementById('contactSpecificSelection').value,
+            message: document.getElementById('contactMessage').value.trim(),
+            _hp: document.getElementById('contactHp').value,
+          };
+
+          fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          })
+            .then(function (res) {
+              if (res.ok) {
+                var area = document.getElementById('contactFormArea');
+                if (area) {
+                  area.innerHTML = '<div class="contact-form-success"><p>Thank you. We\u2019ll be in touch within the hour.</p></div>';
+                }
+              } else {
+                return res.json().catch(function () { return {}; }).then(function (data) {
+                  throw new Error(data.error || 'Server error (' + res.status + ')');
+                });
+              }
+            })
+            .catch(function (err) {
+              submitBtn.disabled = false;
+              setStatus('Something went wrong\u2014please call or WhatsApp us at (305) 876-6650. ' + (err.message || ''), 'error');
+            });
+        });
+
+        function setStatus(msg, type) {
+          var el = document.getElementById('contactStatus');
+          if (!el) return;
+          el.textContent = msg;
+          el.className = 'contact-form-status ' + (type || '');
+        }
+      });
+    }());
   </script>
 
 </body>
