@@ -1072,7 +1072,27 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
-      .nav-links { display: none; }
+      /* Mobile nav: keep links visible, compact layout */
+      .nav {
+        padding: 0 16px;
+        gap: 10px;
+      }
+      .nav-logo img { height: 32px; }
+      .nav-logo-text { display: none; }
+      .nav-links {
+        display: flex;
+        gap: 18px;
+        flex-wrap: nowrap;
+      }
+      .nav-links a {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+      }
+      .nav-cta {
+        padding: 8px 12px;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+      }
       .services-grid { grid-template-columns: 1fr; }
       .service-card { aspect-ratio: 9/16; }
       .phases-grid { grid-template-columns: 1fr; }
@@ -1081,6 +1101,12 @@
       .values-grid { grid-template-columns: repeat(2, 1fr); }
       .campaign-strip { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .nav-cta { display: none; }
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: 9px; letter-spacing: 0.1em; }
     }
     /* ── TESTIMONIALS ── */
     .testimonials-grid {
