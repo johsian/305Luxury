@@ -19,13 +19,23 @@
       background: #060d1a;
       color: #e8edf3;
       font-family: system-ui, -apple-system, sans-serif;
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
     img { display: block; max-width: 100%; }
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
+
+    /* Keyboard focus visibility — applies to all interactive elements */
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+      border-radius: 3px;
+    }
+    :focus:not(:focus-visible) {
+      outline: none;
+    }
 
     /* ── TOKENS ── */
     :root {
@@ -473,6 +483,18 @@
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer { padding: 40px 20px 0; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      video[autoplay] {
+        /* Respect reduced motion preference */
+      }
     }
   </style>
 </head>
@@ -963,7 +985,7 @@
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 8px;
       padding: 9px 13px;
-      font-size: 13px;
+      font-size: 16px;
       color: #fff;
       outline: none;
       font-family: system-ui, sans-serif;
