@@ -10,7 +10,7 @@
   <meta property="og:url" content="https://305luxuryrentals.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;family=Nanum+Myeongjo:wght@400;700;800&amp;display=swap" rel="stylesheet">
   <style>
     /* ── RESET & BASE ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1798,7 +1798,7 @@
         <a href="https://www.facebook.com/305luxuryrentals" target="_blank" rel="noopener noreferrer" aria-label="305 Luxury Rentals on Facebook">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
         </a>
-        <a href="https://www.tiktok.com/@305luxuryrentals?_r=1&_t=ZP-95XvRHJ67KB" target="_blank" rel="noopener noreferrer" aria-label="305 Luxury Rentals on TikTok">
+        <a href="https://www.tiktok.com/@305luxuryrentals?_r=1&amp;_t=ZP-95XvRHJ67KB" target="_blank" rel="noopener noreferrer" aria-label="305 Luxury Rentals on TikTok">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.16 8.16 0 0 0 4.77 1.52V7.12a4.85 4.85 0 0 1-1-.43z"/></svg>
         </a>
         <a href="https://x.com/luxuryrental305" target="_blank" rel="noopener noreferrer" aria-label="305 Luxury Rentals on X / Twitter">
@@ -2013,13 +2013,13 @@
   </style>
 
   <!-- Bubble button -->
-  <button class="chat-bubble" id="chatToggle" aria-label="Open chat">
+  <button class="chat-bubble" id="chatToggle" aria-label="Open chat" aria-expanded="false">
     <svg class="chat-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
     <svg class="chat-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
   </button>
 
   <!-- Chat drawer -->
-  <div class="chat-drawer" id="chatDrawer" role="dialog" aria-label="305 Luxury Concierge">
+  <div class="chat-drawer" id="chatDrawer" role="dialog" aria-modal="true" aria-label="305 Luxury Concierge" aria-hidden="true">
     <div class="chat-header">
       <div class="chat-header-logo">305</div>
       <div class="chat-header-info">
@@ -2048,10 +2048,43 @@
     let messages = [];
     let busy = false;
 
+    // ── A11Y: open/close with aria-expanded, focus management, Escape key, focus trap ──
+    function openDrawer() {
+      toggle.classList.add('open');
+      drawer.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      input.focus();
+    }
+
+    function closeDrawer() {
+      toggle.classList.remove('open');
+      drawer.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      toggle.focus();
+    }
+
     toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      drawer.classList.toggle('open');
-      if (drawer.classList.contains('open')) input.focus();
+      drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+    });
+
+    // Escape key closes drawer and returns focus to toggle
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) {
+        e.preventDefault();
+        closeDrawer();
+      }
+    });
+
+    // Tab focus trap: last focusable (send) wraps to first (input), and vice versa
+    drawer.addEventListener('keydown', e => {
+      if (e.key !== 'Tab') return;
+      if (e.shiftKey) {
+        if (document.activeElement === input) { e.preventDefault(); send.focus(); }
+      } else {
+        if (document.activeElement === send)  { e.preventDefault(); input.focus(); }
+      }
     });
 
     input.addEventListener('keydown', e => {
