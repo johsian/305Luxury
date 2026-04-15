@@ -10,7 +10,7 @@
   <meta property="og:url" content="https://305luxuryrentals.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;family=Nanum+Myeongjo:wght@400;700;800&amp;display=swap" rel="stylesheet">
   <style>
     /* ── RESET & BASE ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -19,13 +19,23 @@
       background: #060d1a;
       color: #e8edf3;
       font-family: system-ui, -apple-system, sans-serif;
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
     img { display: block; max-width: 100%; }
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
+
+    /* Keyboard focus visibility — applies to all interactive elements */
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+      border-radius: 3px;
+    }
+    :focus:not(:focus-visible) {
+      outline: none;
+    }
 
     /* ── TOKENS ── */
     :root {
@@ -100,6 +110,11 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--gold); }
+    .nav-links a.active {
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+    }
     .nav-cta {
       background: linear-gradient(135deg, var(--gold), var(--gold-dark));
       color: #fff;
@@ -786,6 +801,167 @@
       color: var(--text-dim);
     }
 
+    /* ── CONTACT FORM ── */
+    .contact-form-wrap {
+      max-width: 680px;
+      margin: 56px auto 0;
+      text-align: left;
+    }
+    .contact-prefill-notice {
+      display: none;
+      font-family: var(--font-display);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border-gold);
+      border-radius: 2px;
+      padding: 10px 16px;
+      margin-bottom: 24px;
+      background: var(--gold-dim);
+    }
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .contact-form .field-full { grid-column: 1 / -1; }
+    .contact-form label {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 2px;
+      padding: 13px 14px;
+      color: var(--white);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.4;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: var(--text-dim);
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.06);
+    }
+    .contact-form select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+    .contact-form select option {
+      background: #0a1220;
+      color: #fff;
+    }
+    .contact-form textarea { resize: vertical; min-height: 100px; }
+    .contact-form-consent {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .contact-form-consent input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      margin-top: 2px;
+      accent-color: var(--gold);
+      cursor: pointer;
+    }
+    .contact-form-consent span {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .contact-form-submit {
+      grid-column: 1 / -1;
+    }
+    .btn-submit {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #000;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      width: 100%;
+    }
+    .btn-submit:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    .contact-form-status {
+      grid-column: 1 / -1;
+      font-size: 12px;
+      padding: 4px 0;
+      min-height: 20px;
+    }
+    .contact-form-status.sending { color: var(--text-muted); }
+    .contact-form-status.error { color: #e57373; }
+    .contact-form-success {
+      border: 1px solid var(--border-gold);
+      border-radius: 2px;
+      padding: 32px;
+      text-align: center;
+      background: var(--gold-dim);
+    }
+    .contact-form-success p {
+      font-family: var(--font-display);
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      line-height: 1.7;
+    }
+    .contact-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 40px 0 32px;
+      color: var(--text-dim);
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .contact-divider::before,
+    .contact-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-gold);
+    }
+    @media (max-width: 600px) {
+      .contact-form { grid-template-columns: 1fr; }
+      .contact-form .field-full,
+      .contact-form-consent,
+      .contact-form-submit,
+      .contact-form-status { grid-column: 1; }
+    }
+
     /* ── FOOTER ── */
     .footer {
       background: #030810;
@@ -865,6 +1041,34 @@
       transition: color 0.2s;
     }
     .footer-legal a:hover { color: var(--text-muted); }
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 28px 0 0;
+      border-top: 1px solid var(--border-gold);
+      margin-top: 28px;
+    }
+    .footer-social-label {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .footer-social-icons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .footer-social-icons a {
+      color: rgba(255,255,255,0.35);
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+    }
+    .footer-social-icons a:hover { color: var(--gold); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
@@ -878,6 +1082,126 @@
       .campaign-strip { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+    /* ── TESTIMONIALS ── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-gold);
+      border-radius: 4px;
+      padding: 32px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .testimonial-card:hover {
+      background: var(--gold-dim);
+      border-color: rgba(201,168,76,0.4);
+    }
+    .testimonial-stars {
+      display: flex;
+      gap: 4px;
+    }
+    .star {
+      width: 16px;
+      height: 16px;
+      fill: var(--gold);
+      flex-shrink: 0;
+    }
+    .testimonial-quote {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.75;
+      flex: 1;
+      position: relative;
+      padding-left: 20px;
+    }
+    .testimonial-quote::before {
+      content: '\201C';
+      position: absolute;
+      left: 0;
+      top: -4px;
+      font-size: 32px;
+      line-height: 1;
+      color: var(--gold);
+      font-style: normal;
+      font-family: var(--font-serif);
+    }
+    .testimonial-footer {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+    .testimonial-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .testimonial-name {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #fff;
+    }
+    .testimonial-verified {
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-family: var(--font-display);
+      font-weight: 400;
+    }
+    .testimonials-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .testimonials-cta a {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid var(--border-gold);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .testimonials-cta a:hover {
+      color: #fff;
+      border-color: #fff;
+    }
+
+    @media (max-width: 1024px) {
+      .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
+
     @media (max-width: 640px) {
       .nav { padding: 0 20px; }
       .section { padding: 64px 20px; }
@@ -886,10 +1210,23 @@
       .trust-item:last-child { border-right: none; }
       .events-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
       .values-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; gap: 14px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer { padding: 40px 20px 0; }
       .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
       .cta-buttons { flex-direction: column; align-items: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      video[autoplay] {
+        /* Respect reduced motion preference */
+      }
     }
   </style>
 </head>
@@ -897,19 +1234,15 @@
 
   <!-- ── NAVIGATION ── -->
   <nav class="nav">
-    <a href="#" class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <img src="logo.png" alt="305 Luxury Rentals">
-      <div class="nav-logo-text">
-        305 Luxury
-        <span>Rentals</span>
-      </div>
+      <span class="nav-logo-text">305 LUXURY RENTALS</span>
     </a>
     <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="#fleet">Yachts</a></li>
-      <li><a href="#services">Cars</a></li>
-      <li><a href="#services">Mansions</a></li>
-      <li><a href="#events">Events</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="exotics.html">Exotics</a></li>
+      <li><a href="mansions.html">Mansions</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Book Now</a>
   </nav>
@@ -1261,6 +1594,78 @@
     </div>
   </section>
 
+  <!-- ── TESTIMONIALS ── -->
+  <section class="section section-alt">
+    <div class="section-header">
+      <div class="section-eyebrow">Reviews</div>
+      <h2 class="section-title">Words From<br>The 305 Family</h2>
+      <div class="section-accent">Real clients. Real stories.</div>
+    </div>
+    <div class="testimonials-grid">
+
+      <!-- Card 1: David M. -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testimonial-quote">I enjoyed the ride so much. I came here with 6 of my family members and we had the best time! The boat is the perfect size! The boat driver is very nice and knows how to party! We each took turns driving the boat and we made a stop to swim with an amazing view. I'm definitely coming back!</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">DM</div>
+          <div class="testimonial-info">
+            <div class="testimonial-name">David M.</div>
+            <div class="testimonial-verified">Verified Guest &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Carl D. -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testimonial-quote">Had a great time on the awesome crew everyone had great communication very easy to work with made every second great. Highly recommend. Enjoyed the ride. Would love go back. Best pilot and co pilot we could have asked for. Very helpful, Thank you Pedro &amp; Alan!</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">CD</div>
+          <div class="testimonial-info">
+            <div class="testimonial-name">Carl D.</div>
+            <div class="testimonial-verified">Verified Guest &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Solieth H. -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testimonial-quote">Excellent service, have a great day, I highly recommend it 😉😉😉 The best! I had the best birthday of my life! The Crew made my day one spectacular. The lowest prices I found in the area. I recommend them 100%! Here partying, the best service, English, Spanish ... without a doubt the best option!</div>
+        <div class="testimonial-footer">
+          <div class="testimonial-avatar">SH</div>
+          <div class="testimonial-info">
+            <div class="testimonial-name">Solieth H.</div>
+            <div class="testimonial-verified">Verified Guest &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="testimonials-cta">
+      <a href="https://goo.gl/maps/ByrQzuFhy1EpLaqRA" target="_blank" rel="noopener noreferrer">See all reviews on Google &rarr;</a>
+    </div>
+  </section>
+
   <!-- ── BOOKING CTA ── -->
   <section id="contact" class="booking-cta">
     <div class="cta-eyebrow">Ready to Experience the 305 Standard?</div>
@@ -1278,6 +1683,86 @@
       </a>
     </div>
     <div class="cta-availability">Available 7 Days a Week &nbsp;&middot;&nbsp; Miami, FL &nbsp;&middot;&nbsp; Biscayne Bay</div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-wrap">
+      <div class="contact-divider">Or fill out the form below</div>
+
+      <div class="contact-prefill-notice" id="contactPrefillNotice"></div>
+
+      <div id="contactFormArea">
+        <form class="contact-form" id="contactForm" novalidate>
+          <input type="hidden" name="_hp" id="contactHp">
+          <input type="hidden" name="specificSelection" id="contactSpecificSelection">
+
+          <div>
+            <label for="contactName">Name <span style="color:var(--gold)">*</span></label>
+            <input type="text" id="contactName" name="name" placeholder="Your full name" required autocomplete="name">
+          </div>
+
+          <div>
+            <label for="contactEmail">Email <span style="color:var(--gold)">*</span></label>
+            <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required autocomplete="email">
+          </div>
+
+          <div>
+            <label for="contactPhone">Phone <span style="color:var(--gold)">*</span></label>
+            <input type="tel" id="contactPhone" name="phone" placeholder="(305) 000-0000" required autocomplete="tel">
+          </div>
+
+          <div>
+            <label for="contactDate">Preferred Date <span style="color:var(--gold)">*</span></label>
+            <input type="date" id="contactDate" name="preferredDate" required>
+          </div>
+
+          <div>
+            <label for="contactGuests">Guest Count <span style="color:var(--gold)">*</span></label>
+            <input type="number" id="contactGuests" name="guestCount" placeholder="Number of guests" min="1" required>
+          </div>
+
+          <div>
+            <label for="contactEventType">Event Type <span style="color:var(--gold)">*</span></label>
+            <select id="contactEventType" name="eventType" required>
+              <option value="" disabled selected>Select event type</option>
+              <option value="Bachelorette">Bachelorette</option>
+              <option value="Birthday">Birthday</option>
+              <option value="Gender Reveal">Gender Reveal</option>
+              <option value="Corporate">Corporate</option>
+              <option value="Anniversary">Anniversary</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="field-full">
+            <label for="contactInterest">Experience Interest <span style="color:var(--gold)">*</span></label>
+            <select id="contactInterest" name="experienceInterest" required>
+              <option value="" disabled selected>Select your interest</option>
+              <option value="Yacht Charter">Yacht Charter</option>
+              <option value="Exotic Car">Exotic Car</option>
+              <option value="Mansion">Mansion</option>
+              <option value="Multi-Experience Package">Multi-Experience Package</option>
+              <option value="Not Sure">Not Sure</option>
+            </select>
+          </div>
+
+          <div class="field-full">
+            <label for="contactMessage">Message (optional)</label>
+            <textarea id="contactMessage" name="message" placeholder="Tell us about your event, any special requests, or questions…" rows="4"></textarea>
+          </div>
+
+          <div class="contact-form-consent field-full">
+            <input type="checkbox" id="contactConsent" name="consent" required>
+            <span><label for="contactConsent">I agree to be contacted by 305 Luxury Rentals about my inquiry.</label></span>
+          </div>
+
+          <div class="contact-form-status" id="contactStatus" role="status" aria-live="polite"></div>
+
+          <div class="contact-form-submit">
+            <button type="submit" class="btn-submit" id="contactSubmit">Send Inquiry</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </section>
 
   <!-- ── FOOTER ── -->
@@ -1297,8 +1782,8 @@
         <div class="footer-col-title">Services</div>
         <ul>
           <li><a href="#fleet">Yacht Charters</a></li>
-          <li><a href="#services">Exotic Cars</a></li>
-          <li><a href="#services">Mansion Rentals</a></li>
+          <li><a href="exotics.html">Exotic Cars</a></li>
+          <li><a href="mansions.html">Mansion Rentals</a></li>
           <li><a href="#events">Event Packages</a></li>
         </ul>
       </div>
@@ -1316,6 +1801,7 @@
       <div class="footer-col">
         <div class="footer-col-title">Contact</div>
         <ul>
+          <li><a href="mailto:info@305luxuryrentals.com">info@305luxuryrentals.com</a></li>
           <li><a href="https://wa.me/13058766650" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="tel:+13058766650">(305) 876-6650</a></li>
           <li><a href="https://305luxuryrentals.com" target="_blank" rel="noopener">305luxuryrentals.com</a></li>
@@ -1323,11 +1809,31 @@
       </div>
 
     </div>
+
+    <!-- ── SOCIAL FOLLOW ROW ── -->
+    <div class="footer-social">
+      <div class="footer-social-label">Follow</div>
+      <div class="footer-social-icons">
+        <a href="https://www.instagram.com/305_luxuryrentals/" target="_blank" rel="noopener noreferrer" aria-label="305 Luxury Rentals on Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.facebook.com/305luxuryrentals" target="_blank" rel="noopener noreferrer" aria-label="305 Luxury Rentals on Facebook">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@305luxuryrentals?_r=1&amp;_t=ZP-95XvRHJ67KB" target="_blank" rel="noopener noreferrer" aria-label="305 Luxury Rentals on TikTok">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.16 8.16 0 0 0 4.77 1.52V7.12a4.85 4.85 0 0 1-1-.43z"/></svg>
+        </a>
+        <a href="https://x.com/luxuryrental305" target="_blank" rel="noopener noreferrer" aria-label="305 Luxury Rentals on X / Twitter">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L2.25 2.25h6.963l4.259 5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+    </div>
+
     <div class="footer-bottom">
       <div class="footer-copy">&copy; 2026 305 Luxury Rentals. All rights reserved.</div>
       <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
   </footer>
@@ -1496,7 +2002,7 @@
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 8px;
       padding: 9px 13px;
-      font-size: 13px;
+      font-size: 16px;
       color: #fff;
       outline: none;
       font-family: system-ui, sans-serif;
@@ -1529,13 +2035,13 @@
   </style>
 
   <!-- Bubble button -->
-  <button class="chat-bubble" id="chatToggle" aria-label="Open chat">
+  <button class="chat-bubble" id="chatToggle" aria-label="Open chat" aria-expanded="false">
     <svg class="chat-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
     <svg class="chat-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
   </button>
 
   <!-- Chat drawer -->
-  <div class="chat-drawer" id="chatDrawer" role="dialog" aria-label="305 Luxury Concierge">
+  <div class="chat-drawer" id="chatDrawer" role="dialog" aria-modal="true" aria-label="305 Luxury Concierge" aria-hidden="true">
     <div class="chat-header">
       <div class="chat-header-logo">305</div>
       <div class="chat-header-info">
@@ -1564,10 +2070,43 @@
     let messages = [];
     let busy = false;
 
+    // ── A11Y: open/close with aria-expanded, focus management, Escape key, focus trap ──
+    function openDrawer() {
+      toggle.classList.add('open');
+      drawer.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      input.focus();
+    }
+
+    function closeDrawer() {
+      toggle.classList.remove('open');
+      drawer.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      toggle.focus();
+    }
+
     toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      drawer.classList.toggle('open');
-      if (drawer.classList.contains('open')) input.focus();
+      drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+    });
+
+    // Escape key closes drawer and returns focus to toggle
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) {
+        e.preventDefault();
+        closeDrawer();
+      }
+    });
+
+    // Tab focus trap: last focusable (send) wraps to first (input), and vice versa
+    drawer.addEventListener('keydown', e => {
+      if (e.key !== 'Tab') return;
+      if (e.shiftKey) {
+        if (document.activeElement === input) { e.preventDefault(); send.focus(); }
+      } else {
+        if (document.activeElement === send)  { e.preventDefault(); input.focus(); }
+      }
     });
 
     input.addEventListener('keydown', e => {
@@ -1651,6 +2190,116 @@
       busy = false;
       send.disabled = false;
       input.focus();
+    }
+  </script>
+
+  <!-- ── CONTACT FORM LOGIC ── -->
+  <script>
+    (function () {
+      'use strict';
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var params = new URLSearchParams(location.search);
+        var vehicle = params.get('vehicle');
+        var property = params.get('property');
+        var selection = vehicle || property || '';
+
+        if (selection) {
+          var hiddenField = document.getElementById('contactSpecificSelection');
+          if (hiddenField) hiddenField.value = selection;
+
+          var notice = document.getElementById('contactPrefillNotice');
+          if (notice) {
+            notice.textContent = 'Interested in: ' + selection;
+            notice.style.display = 'block';
+          }
+
+          // Pre-select experience interest based on param type
+          var interestSelect = document.getElementById('contactInterest');
+          if (interestSelect) {
+            if (vehicle) {
+              interestSelect.value = 'Exotic Car';
+            } else if (property) {
+              interestSelect.value = 'Mansion';
+            }
+          }
+        }
+
+        var form = document.getElementById('contactForm');
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          // Basic JS validation on top of HTML5
+          var required = ['contactName', 'contactEmail', 'contactPhone', 'contactDate', 'contactGuests', 'contactEventType', 'contactInterest'];
+          var missing = required.some(function (id) {
+            var el = document.getElementById(id);
+            return !el || !el.value.trim();
+          });
+          var consent = document.getElementById('contactConsent');
+          if (missing || !consent || !consent.checked) {
+            setStatus('Please fill in all required fields and accept the consent checkbox.', 'error');
+            return;
+          }
+
+          var submitBtn = document.getElementById('contactSubmit');
+          submitBtn.disabled = true;
+          setStatus('Sending\u2026', 'sending');
+
+          var payload = {
+            name: document.getElementById('contactName').value.trim(),
+            email: document.getElementById('contactEmail').value.trim(),
+            phone: document.getElementById('contactPhone').value.trim(),
+            preferredDate: document.getElementById('contactDate').value,
+            guestCount: document.getElementById('contactGuests').value,
+            eventType: document.getElementById('contactEventType').value,
+            experienceInterest: document.getElementById('contactInterest').value,
+            specificSelection: document.getElementById('contactSpecificSelection').value,
+            message: document.getElementById('contactMessage').value.trim(),
+            _hp: document.getElementById('contactHp').value,
+          };
+
+          fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          })
+            .then(function (res) {
+              if (res.ok) {
+                var area = document.getElementById('contactFormArea');
+                if (area) {
+                  area.innerHTML = '<div class="contact-form-success"><p>Thank you. We\u2019ll be in touch within the hour.</p></div>';
+                }
+              } else {
+                return res.json().catch(function () { return {}; }).then(function (data) {
+                  throw new Error(data.error || 'Server error (' + res.status + ')');
+                });
+              }
+            })
+            .catch(function (err) {
+              submitBtn.disabled = false;
+              setStatus('Something went wrong\u2014please call or WhatsApp us at (305) 876-6650. ' + (err.message || ''), 'error');
+            });
+        });
+
+        function setStatus(msg, type) {
+          var el = document.getElementById('contactStatus');
+          if (!el) return;
+          el.textContent = msg;
+          el.className = 'contact-form-status ' + (type || '');
+        }
+      });
+    }());
+  </script>
+
+  <script>
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('video[autoplay]').forEach(function(v){
+        v.removeAttribute('autoplay');
+        v.pause();
+        v.controls = true; // let user opt in
+      });
     }
   </script>
 
