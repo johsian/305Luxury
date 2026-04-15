@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Mansions | 305 Luxury Rentals</title>
+  <meta name="description" content="Private waterfront mansions in Miami for rent. Villa Faith, Villa Justina, and San Bali — exclusive estates on Biscayne Bay and Keystone. Book with 305 Luxury Rentals.">
+  <meta property="og:title" content="Luxury Mansions | 305 Luxury Rentals">
+  <meta property="og:description" content="Waterfront estates in Miami Shores &amp; Keystone. Private dock, pool, and unparalleled luxury.">
+  <meta property="og:url" content="https://305luxuryrentals.com/mansions.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;family=Nanum+Myeongjo:wght@400;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #060d1a;
+      color: #e8edf3;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ── TOKENS ── */
+    :root {
+      --gold: #C9A84C;
+      --gold-dark: #A37B2A;
+      --gold-dim: rgba(201,168,76,0.15);
+      --navy: #060d1a;
+      --navy-2: #080f1c;
+      --navy-3: #0a1220;
+      --white: #ffffff;
+      --text: rgba(255,255,255,0.82);
+      --text-muted: rgba(255,255,255,0.48);
+      --text-dim: rgba(255,255,255,0.24);
+      --border: rgba(255,255,255,0.07);
+      --border-gold: rgba(201,168,76,0.2);
+      --font-display: 'Oswald', sans-serif;
+      --font-serif: 'Nanum Myeongjo', serif;
+    }
+
+    /* ── NAVIGATION ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 68px;
+      background: rgba(6,13,26,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-gold);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo img {
+      height: 38px;
+      width: auto;
+    }
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a.active {
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+    }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* ── HERO (static, no video) ── */
+    .hero-static {
+      position: relative;
+      padding: 160px 40px 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #030810 0%, #060d1a 60%, #08101d 100%);
+      border-bottom: 1px solid var(--border-gold);
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-static::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 88px);
+      font-weight: 700;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-size: clamp(15px, 2.5vw, 20px);
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 36px;
+      letter-spacing: 0.02em;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 15px 32px;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.78);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── SECTION COMMON ── */
+    .section { padding: 88px 40px; }
+    .section-alt { background: var(--navy-2); }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-eyebrow {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 50px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      line-height: 1.0;
+    }
+    .section-accent {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-style: italic;
+      color: var(--gold);
+      margin-top: 10px;
+    }
+    .section-sub {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+
+    /* ── LISTING CARD (shared across exotics and mansions) ── */
+    .listings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .listing-card {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .listing-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+    }
+    .listing-thumb {
+      height: 210px;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .listing-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .listing-card:hover .listing-thumb img { transform: scale(1.06); }
+    /* Styled placeholder for listings without photos */
+    .listing-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #0c1828 0%, #0a1220 50%, #060d1a 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--border-gold);
+    }
+    .listing-placeholder-monogram {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 1px solid var(--border-gold);
+      background: var(--gold-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .listing-placeholder-label {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .listing-info {
+      padding: 18px 18px 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .listing-name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #fff;
+      margin-bottom: 4px;
+      line-height: 1.15;
+    }
+    .listing-location {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .listing-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    .listing-blurb {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 16px;
+    }
+    .listing-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+    .listing-btn {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border-gold);
+      padding: 8px 16px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+    .listing-card:hover .listing-btn { background: var(--gold-dim); }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #030810;
+      padding: 56px 40px 0;
+      border-top: 1px solid var(--border);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .footer-tagline {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .footer-col ul li {
+      margin-bottom: 8px;
+    }
+    .footer-col ul li a {
+      font-size: 12px;
+      color: var(--text-muted);
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+    }
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-legal a {
+      font-size: 11px;
+      color: var(--text-dim);
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: var(--text-muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .listings-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav { padding: 0 20px; }
+      .section { padding: 64px 20px; }
+      .hero-static { padding: 130px 20px 72px; }
+      .listings-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer { padding: 40px 20px 0; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="305 Luxury Rentals">
+      <span class="nav-logo-text">305 LUXURY RENTALS</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#fleet">Yachts</a></li>
+      <li><a href="exotics.html">Exotics</a></li>
+      <li><a href="mansions.html" class="active">Mansions</a></li>
+    </ul>
+    <a href="index.html#contact" class="nav-cta">Book Now</a>
+  </nav>
+
+  <!-- ── HERO (static, no video) ── -->
+  <section class="hero-static">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Waterfront &middot; Biscayne Bay &middot; Keystone</div>
+      <h1 class="hero-title">Private Miami Mansions</h1>
+      <div class="hero-tagline">Where the bay meets unmatched luxury — your private estate awaits.</div>
+      <div class="hero-actions">
+        <a href="index.html#contact" class="btn-primary">Book Your Experience</a>
+        <a href="index.html" class="btn-outline">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MANSIONS GRID ── -->
+  <section class="section section-alt">
+    <div class="section-header">
+      <div class="section-eyebrow">3 Properties</div>
+      <h2 class="section-title">Choose Your Estate</h2>
+      <div class="section-accent">Every view. Every wing. Every memory.</div>
+      <p class="section-sub">From intimate waterfront villas to grand multi-wing estates, our properties are curated for those who demand the extraordinary.</p>
+    </div>
+
+    <div class="listings-grid">
+
+      <!-- 1. Villa Faith -->
+      <!-- TODO: Replace with actual property photo -->
+      <div class="listing-card">
+        <div class="listing-thumb">
+          <div class="listing-placeholder">
+            <div class="listing-placeholder-monogram">F</div>
+            <div class="listing-placeholder-label">Villa Faith</div>
+          </div>
+        </div>
+        <div class="listing-info">
+          <div class="listing-name">Villa Faith</div>
+          <div class="listing-location">Miami Shores</div>
+          <div class="listing-meta">14 guests &middot; 5 bd &middot; 3.5 ba &middot; 3,076 sq ft interior</div>
+          <div class="listing-blurb">Intimate waterfront estate with classic Miami Shores elegance.</div>
+          <div class="listing-footer">
+            <a href="index.html?property=Villa%20Faith#contact" class="listing-btn">Book Now &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Villa Justina (confirmed live photo) -->
+      <div class="listing-card">
+        <div class="listing-thumb">
+          <img src="https://content.app-sources.com/s/1350989266656589/uploads/Houses/305LuxuryRentals_VillaJustina1-5616025.jpg?format=webp" alt="Villa Justina — Miami Shores" loading="lazy">
+        </div>
+        <div class="listing-info">
+          <div class="listing-name">Villa Justina</div>
+          <div class="listing-location">Miami Shores</div>
+          <div class="listing-meta">20 guests &middot; 7 bd &middot; 5 full + 2 half ba &middot; 6,679 sq ft interior</div>
+          <div class="listing-blurb">Expansive multi-wing residence &mdash; perfect for large celebrations.</div>
+          <div class="listing-footer">
+            <a href="index.html?property=Villa%20Justina#contact" class="listing-btn">Book Now &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. San Bali -->
+      <!-- TODO: Replace with actual property photo -->
+      <div class="listing-card">
+        <div class="listing-thumb">
+          <div class="listing-placeholder">
+            <div class="listing-placeholder-monogram">S</div>
+            <div class="listing-placeholder-label">San Bali</div>
+          </div>
+        </div>
+        <div class="listing-info">
+          <div class="listing-name">San Bali</div>
+          <div class="listing-location">Keystone</div>
+          <div class="listing-meta">16 guests &middot; 4 bd &middot; 4.5 ba &middot; Waterfront &middot; Dock access</div>
+          <div class="listing-blurb">Waterfront retreat in Keystone with private dock and pool.</div>
+          <div class="listing-footer">
+            <a href="index.html?property=San%20Bali#contact" class="listing-btn">Book Now &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand-name">305 Luxury Rentals</div>
+        <div class="footer-tagline">"Miami Opulence. Gold Standard.<br>VIP Exclusivity. Cinematic Glamour."</div>
+        <div style="font-size:11px; color: var(--text-dim); letter-spacing:0.04em; line-height:1.7;">
+          Miami, Florida<br>
+          Biscayne Bay &amp; Surrounding Areas
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="index.html#fleet">Yacht Charters</a></li>
+          <li><a href="exotics.html">Exotic Cars</a></li>
+          <li><a href="mansions.html">Mansion Rentals</a></li>
+          <li><a href="index.html#events">Event Packages</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Events</div>
+        <ul>
+          <li><a href="index.html#events">Bachelorette Parties</a></li>
+          <li><a href="index.html#events">Birthdays</a></li>
+          <li><a href="index.html#events">Gender Reveals</a></li>
+          <li><a href="index.html#events">Corporate Events</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <ul>
+          <li><a href="https://wa.me/13058766650" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="tel:+13058766650">(305) 876-6650</a></li>
+          <li><a href="https://305luxuryrentals.com" target="_blank" rel="noopener">305luxuryrentals.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 305 Luxury Rentals. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── AI CHAT WIDGET ── -->
+  <style>
+    .chat-bubble {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 1000;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #C9A84C, #A37B2A);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(201,168,76,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .chat-bubble:hover { transform: scale(1.08); box-shadow: 0 6px 32px rgba(201,168,76,0.55); }
+    .chat-bubble svg { width: 26px; height: 26px; fill: #fff; }
+    .chat-bubble .chat-close { display: none; }
+    .chat-bubble.open .chat-icon { display: none; }
+    .chat-bubble.open .chat-close { display: block; }
+
+    .chat-drawer {
+      position: fixed;
+      bottom: 100px;
+      right: 28px;
+      z-index: 999;
+      width: 360px;
+      max-height: 520px;
+      background: #080f1c;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 16px 60px rgba(0,0,0,0.6);
+      overflow: hidden;
+      transform: scale(0.92) translateY(16px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+    .chat-drawer.open {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: all;
+    }
+    .chat-header {
+      background: linear-gradient(135deg, #0d1728, #0a1220);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .chat-header-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #C9A84C, #A37B2A);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.05em;
+    }
+    .chat-header-info { flex: 1; }
+    .chat-header-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .chat-header-status {
+      font-size: 10px;
+      color: #4ade80;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 1px;
+    }
+    .chat-header-status::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      display: inline-block;
+    }
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.08) transparent;
+    }
+    .chat-msg {
+      max-width: 85%;
+      font-size: 13px;
+      line-height: 1.6;
+      padding: 10px 13px;
+      border-radius: 10px;
+    }
+    .chat-msg.assistant {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.85);
+      align-self: flex-start;
+      border-bottom-left-radius: 3px;
+    }
+    .chat-msg.user {
+      background: linear-gradient(135deg, #C9A84C, #A37B2A);
+      color: #fff;
+      align-self: flex-end;
+      border-bottom-right-radius: 3px;
+    }
+    .chat-typing {
+      display: flex;
+      gap: 4px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      border-bottom-left-radius: 3px;
+      align-self: flex-start;
+      width: fit-content;
+    }
+    .chat-typing span {
+      width: 6px;
+      height: 6px;
+      background: rgba(255,255,255,0.4);
+      border-radius: 50%;
+      animation: typingDot 1.2s ease-in-out infinite;
+    }
+    .chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+    .chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingDot {
+      0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+      30% { opacity: 1; transform: translateY(-3px); }
+    }
+    .chat-input-row {
+      padding: 12px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      gap: 8px;
+      background: #060d1a;
+    }
+    .chat-input {
+      flex: 1;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 9px 13px;
+      font-size: 13px;
+      color: #fff;
+      outline: none;
+      font-family: system-ui, sans-serif;
+      resize: none;
+      transition: border-color 0.2s;
+    }
+    .chat-input:focus { border-color: rgba(201,168,76,0.4); }
+    .chat-input::placeholder { color: rgba(255,255,255,0.3); }
+    .chat-send {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #C9A84C, #A37B2A);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: opacity 0.2s;
+    }
+    .chat-send:hover { opacity: 0.88; }
+    .chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
+    .chat-send svg { width: 16px; height: 16px; fill: #fff; }
+
+    @media (max-width: 420px) {
+      .chat-drawer { width: calc(100vw - 32px); right: 16px; bottom: 90px; }
+      .chat-bubble { right: 16px; bottom: 16px; }
+    }
+  </style>
+
+  <!-- Bubble button -->
+  <button class="chat-bubble" id="chatToggle" aria-label="Open chat">
+    <svg class="chat-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+    <svg class="chat-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </button>
+
+  <!-- Chat drawer -->
+  <div class="chat-drawer" id="chatDrawer" role="dialog" aria-label="305 Luxury Concierge">
+    <div class="chat-header">
+      <div class="chat-header-logo">305</div>
+      <div class="chat-header-info">
+        <div class="chat-header-name">Luxury Concierge</div>
+        <div class="chat-header-status">Online now</div>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg assistant">Welcome to 305 Luxury Rentals &#127968; I'm your personal concierge. How can I help you plan the ultimate Miami experience?</div>
+    </div>
+    <div class="chat-input-row">
+      <textarea class="chat-input" id="chatInput" placeholder="Ask about mansions, yachts, events…" rows="1"></textarea>
+      <button class="chat-send" id="chatSend" aria-label="Send">
+        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('chatToggle');
+    const drawer = document.getElementById('chatDrawer');
+    const input  = document.getElementById('chatInput');
+    const send   = document.getElementById('chatSend');
+    const msgs   = document.getElementById('chatMessages');
+
+    let messages = [];
+    let busy = false;
+
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      drawer.classList.toggle('open');
+      if (drawer.classList.contains('open')) input.focus();
+    });
+
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+    });
+    send.addEventListener('click', sendMessage);
+
+    function appendMsg(role, text) {
+      const div = document.createElement('div');
+      div.className = `chat-msg ${role}`;
+      div.textContent = text;
+      msgs.appendChild(div);
+      msgs.scrollTop = msgs.scrollHeight;
+      return div;
+    }
+
+    function showTyping() {
+      const el = document.createElement('div');
+      el.className = 'chat-typing';
+      el.id = 'typingIndicator';
+      el.innerHTML = '<span></span><span></span><span></span>';
+      msgs.appendChild(el);
+      msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    function removeTyping() {
+      document.getElementById('typingIndicator')?.remove();
+    }
+
+    async function sendMessage() {
+      const text = input.value.trim();
+      if (!text || busy) return;
+
+      busy = true;
+      send.disabled = true;
+      input.value = '';
+
+      appendMsg('user', text);
+      messages.push({ role: 'user', content: text });
+      showTyping();
+
+      try {
+        const res = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ messages })
+        });
+
+        removeTyping();
+
+        if (!res.ok) throw new Error('Request failed');
+
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        const bubble = appendMsg('assistant', '');
+        let full = '';
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          const chunk = decoder.decode(value, { stream: true });
+          // Parse AI SDK data stream format
+          for (const line of chunk.split('\n')) {
+            if (line.startsWith('0:')) {
+              try {
+                const token = JSON.parse(line.slice(2));
+                full += token;
+                bubble.textContent = full;
+                msgs.scrollTop = msgs.scrollHeight;
+              } catch {}
+            }
+          }
+        }
+
+        messages.push({ role: 'assistant', content: full });
+      } catch {
+        removeTyping();
+        appendMsg('assistant', 'Sorry, something went wrong. Please WhatsApp us at (305) 876-6650 for immediate help.');
+      }
+
+      busy = false;
+      send.disabled = false;
+      input.focus();
+    }
+  </script>
+
+</body>
+</html>
