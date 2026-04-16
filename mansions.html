@@ -122,23 +122,41 @@
     }
     .nav-cta:hover { opacity: 0.88; }
 
-    /* ── HERO (static, no video) ── */
+    /* ── HERO (video-backed) ── */
     .hero-static {
       position: relative;
       padding: 160px 40px 96px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(180deg, #030810 0%, #060d1a 60%, #08101d 100%);
+      background: #030810;
       border-bottom: 1px solid var(--border-gold);
       text-align: center;
       overflow: hidden;
+      min-height: min(720px, 90vh);
     }
-    .hero-static::before {
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .hero-video-wrap video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      opacity: 0.65;
+    }
+    .hero-video-wrap::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 65%);
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.10) 0%, transparent 60%),
+        linear-gradient(180deg, rgba(3,8,16,0.45) 0%, rgba(6,13,26,0.7) 60%, rgba(8,16,29,0.9) 100%);
       pointer-events: none;
     }
     .hero-content {
@@ -548,8 +566,14 @@
     <a href="index.html#contact" class="nav-cta">Book Now</a>
   </nav>
 
-  <!-- ── HERO (static, no video) ── -->
+  <!-- ── HERO (video-backed) ── -->
   <section class="hero-static">
+    <div class="hero-video-wrap">
+      <video autoplay muted loop playsinline preload="auto" poster="public/video/mansion-poster.jpg">
+        <source src="public/video/mansion.webm" type="video/webm">
+        <source src="public/video/mansion.mp4" type="video/mp4">
+      </video>
+    </div>
     <div class="hero-content">
       <div class="hero-eyebrow">Waterfront &middot; Biscayne Bay &middot; Keystone</div>
       <h1 class="hero-title">Private Miami Mansions</h1>
@@ -1056,6 +1080,17 @@
       busy = false;
       send.disabled = false;
       input.focus();
+    }
+  </script>
+
+  <!-- Respect prefers-reduced-motion for autoplay videos -->
+  <script>
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('video[autoplay]').forEach(function (v) {
+        v.removeAttribute('autoplay');
+        v.pause();
+        v.controls = true;
+      });
     }
   </script>
 
