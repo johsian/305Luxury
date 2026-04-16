@@ -753,7 +753,27 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .nav { padding: 0 20px; }
-      .nav-links { display: none; }
+      /* Mobile nav: keep links visible, compact layout */
+      .nav {
+        padding: 0 16px;
+        gap: 10px;
+      }
+      .nav-logo img { height: 32px; }
+      .nav-logo-text { display: none; }
+      .nav-links {
+        display: flex;
+        gap: 18px;
+        flex-wrap: nowrap;
+      }
+      .nav-links a {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+      }
+      .nav-cta {
+        padding: 8px 12px;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+      }
       .why-grid { grid-template-columns: repeat(2, 1fr); }
       .packages-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -784,17 +804,21 @@
 <body>
 
   <!-- ── NAVIGATION ── -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a class="nav-logo" href="index.html" aria-label="305 Luxury Rentals home">
-      <div class="nav-logo-text">305 Luxury</div>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="305 Luxury Rentals">
+      <span class="nav-logo-text">305 LUXURY RENTALS</span>
     </a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#fleet">Yachts</a>
-      <a href="exotics.html">Exotics</a>
-      <a href="mansions.html">Mansions</a>
-      <a href="index.html#contact" class="nav-cta">Book Now</a>
-    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#fleet">Yachts</a></li>
+      <li><a href="exotics.html">Exotics</a></li>
+      <li><a href="mansions.html">Mansions</a></li>
+      <li><a href="bachelorette.html">Bachelorette</a></li>
+      <li><a href="birthday.html">Birthdays</a></li>
+      <li><a href="gender-reveal.html">Gender Reveal</a></li>
+    </ul>
+    <a href="index.html#contact" class="nav-cta">Book Now</a>
   </nav>
 
   <!-- ── HERO (static) ── -->
