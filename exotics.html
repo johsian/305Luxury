@@ -488,37 +488,85 @@
     .footer-social-icons a:hover { color: var(--gold); }
 
     /* ── RESPONSIVE ── */
+
+    /* ── MOBILE MENU ── */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 201;
+    }
+    .nav-hamburger svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--gold);
+      stroke-width: 2;
+      fill: none;
+    }
+    .nav-hamburger .icon-close { display: none; }
+    .nav-hamburger.open .icon-menu { display: none; }
+    .nav-hamburger.open .icon-close { display: block; }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(6,13,26,0.97);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .mobile-menu.open {
+      display: flex;
+      opacity: 1;
+    }
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      padding: 16px 0;
+      transition: color 0.2s;
+      text-align: center;
+    }
+    .mobile-menu a:hover,
+    .mobile-menu a.active { color: var(--gold); }
+    .mobile-menu .mobile-menu-cta {
+      margin-top: 24px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+    }
+
     @media (max-width: 1024px) {
-      /* Mobile nav: keep links visible, compact layout */
+      /* Mobile: hide inline nav, show hamburger */
       .nav {
         padding: 0 16px;
-        gap: 10px;
       }
       .nav-logo img { height: 32px; }
       .nav-logo-text { display: none; }
-      .nav-links {
-        display: flex;
-        gap: 18px;
-        flex-wrap: nowrap;
-      }
-      .nav-links a {
-        font-size: 10px;
-        letter-spacing: 0.12em;
-      }
-      .nav-cta {
-        padding: 8px 12px;
-        font-size: 10px;
-        letter-spacing: 0.12em;
-      }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: block; }
       .cars-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
-    @media (max-width: 560px) {
-      .nav-cta { display: none; }
-      .nav-links { gap: 12px; }
-      .nav-links a { font-size: 9px; letter-spacing: 0.1em; }
-    }
+
     @media (max-width: 640px) {
       .nav { padding: 0 20px; }
       .section { padding: 64px 20px; }
@@ -561,7 +609,23 @@
       <li><a href="gender-reveal.html">Gender Reveal</a></li>
     </ul>
     <a href="index.html#contact" class="nav-cta">Book Now</a>
+
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <svg class="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
   </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#fleet">Yachts</a>
+    <a href="exotics.html" class="active">Exotics</a>
+    <a href="mansions.html">Mansions</a>
+    <a href="bachelorette.html">Bachelorette</a>
+    <a href="birthday.html">Birthdays</a>
+    <a href="gender-reveal.html">Gender Reveal</a>
+    <a href="index.html#contact" class="mobile-menu-cta">Book Now</a>
+  </div>
+
 
   <!-- ── HERO (video-backed) ── -->
   <section class="hero-static">
@@ -1200,5 +1264,37 @@
     }
   </script>
 
+
+  <!-- Mobile menu -->
+  <script>
+  (function() {
+    var btn = document.getElementById('navHamburger');
+    var menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function() {
+      var isOpen = menu.classList.toggle('open');
+      btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    menu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        btn.focus();
+      }
+    });
+  })();
+  </script>
 </body>
 </html>

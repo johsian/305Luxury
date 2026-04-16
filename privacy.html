@@ -256,35 +256,19 @@
     .footer-legal a:hover { color: var(--text-muted); }
 
     @media (max-width: 900px) {
-      /* Mobile nav: keep links visible, compact layout */
+      /* Mobile: hide inline nav, show hamburger */
       .nav {
         padding: 0 16px;
-        gap: 10px;
       }
       .nav-logo img { height: 32px; }
       .nav-logo-text { display: none; }
-      .nav-links {
-        display: flex;
-        gap: 18px;
-        flex-wrap: nowrap;
-      }
-      .nav-links a {
-        font-size: 10px;
-        letter-spacing: 0.12em;
-      }
-      .nav-cta {
-        padding: 8px 12px;
-        font-size: 10px;
-        letter-spacing: 0.12em;
-      }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: block; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
-    @media (max-width: 560px) {
-      .nav-cta { display: none; }
-      .nav-links { gap: 12px; }
-      .nav-links a { font-size: 9px; letter-spacing: 0.1em; }
-    }
+
     @media (max-width: 600px) {
       .nav { padding: 0 20px; }
       .legal-page { padding: 100px 20px 60px; }
@@ -323,7 +307,23 @@
       <li><a href="gender-reveal.html">Gender Reveal</a></li>
     </ul>
     <a href="index.html#contact" class="nav-cta">Book Now</a>
+
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <svg class="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
   </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#fleet">Yachts</a>
+    <a href="exotics.html">Exotics</a>
+    <a href="mansions.html">Mansions</a>
+    <a href="bachelorette.html">Bachelorette</a>
+    <a href="birthday.html">Birthdays</a>
+    <a href="gender-reveal.html">Gender Reveal</a>
+    <a href="index.html#contact" class="mobile-menu-cta">Book Now</a>
+  </div>
+
 
   <main class="legal-page">
     <h1>Privacy Policy</h1>
@@ -772,5 +772,37 @@
     }
   </script>
 
+
+  <!-- Mobile menu -->
+  <script>
+  (function() {
+    var btn = document.getElementById('navHamburger');
+    var menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function() {
+      var isOpen = menu.classList.toggle('open');
+      btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    menu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        btn.focus();
+      }
+    });
+  })();
+  </script>
 </body>
 </html>

@@ -564,11 +564,7 @@
         letter-spacing: 0.12em;
       }
     }
-    @media (max-width: 560px) {
-      .nav-cta { display: none; }
-      .nav-links { gap: 12px; }
-      .nav-links a { font-size: 9px; letter-spacing: 0.1em; }
-    }
+
     @media (max-width: 640px) {
       .nav { padding: 0 20px; }
       .section { padding: 64px 20px; }
@@ -608,7 +604,23 @@
       <li><a href="gender-reveal.html">Gender Reveal</a></li>
     </ul>
     <a href="index.html#contact" class="nav-cta">Book Now</a>
+
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <svg class="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
   </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#fleet">Yachts</a>
+    <a href="exotics.html">Exotics</a>
+    <a href="mansions.html">Mansions</a>
+    <a href="bachelorette.html">Bachelorette</a>
+    <a href="birthday.html">Birthdays</a>
+    <a href="gender-reveal.html">Gender Reveal</a>
+    <a href="index.html#contact" class="mobile-menu-cta">Book Now</a>
+  </div>
+
 
   <!-- ── HERO (static, no video) ── -->
   <section class="hero-static">
@@ -1174,5 +1186,37 @@
     }
   </script>
 
+
+  <!-- Mobile menu -->
+  <script>
+  (function() {
+    var btn = document.getElementById('navHamburger');
+    var menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function() {
+      var isOpen = menu.classList.toggle('open');
+      btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    menu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        btn.focus();
+      }
+    });
+  })();
+  </script>
 </body>
 </html>
