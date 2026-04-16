@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Yacht Rentals | 305 Luxury Rentals</title>
+  <meta name="description" content="Celebrate your birthday on a private luxury yacht in Miami. Up to 13 guests, captain and drinks included. Essential, Deluxe &amp; Premium packages available.">
+  <meta property="og:title" content="Birthday Yacht Rentals | 305 Luxury Rentals">
+  <meta property="og:description" content="Celebrate your birthday on a private luxury yacht in Miami. Up to 13 guests, captain and drinks included.">
+  <meta property="og:url" content="https://305luxuryrentals.com/birthday.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;family=Nanum+Myeongjo:wght@400;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #060d1a;
+      color: #e8edf3;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* Keyboard focus visibility */
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+      border-radius: 3px;
+    }
+    :focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    /* ── TOKENS ── */
+    :root {
+      --gold: #C9A84C;
+      --gold-dark: #A37B2A;
+      --gold-dim: rgba(201,168,76,0.15);
+      --navy: #060d1a;
+      --navy-2: #080f1c;
+      --navy-3: #0a1220;
+      --white: #ffffff;
+      --text: rgba(255,255,255,0.82);
+      --text-muted: rgba(255,255,255,0.48);
+      --text-dim: rgba(255,255,255,0.24);
+      --border: rgba(255,255,255,0.07);
+      --border-gold: rgba(201,168,76,0.2);
+      --font-display: 'Oswald', sans-serif;
+      --font-serif: 'Nanum Myeongjo', serif;
+    }
+
+    /* ── NAVIGATION ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 68px;
+      background: rgba(6,13,26,0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-gold);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo img {
+      height: 38px;
+      width: auto;
+    }
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* ── HERO (static) ── */
+    .hero-static {
+      position: relative;
+      padding: 160px 40px 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #030810;
+      border-bottom: 1px solid var(--border-gold);
+      text-align: center;
+      overflow: hidden;
+      min-height: min(720px, 90vh);
+    }
+    .hero-static::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.10) 0%, transparent 60%),
+        linear-gradient(180deg, rgba(3,8,16,0.55) 0%, rgba(6,13,26,0.75) 60%, rgba(8,16,29,0.9) 100%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 88px);
+      font-weight: 700;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-size: clamp(15px, 2.5vw, 20px);
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 36px;
+      letter-spacing: 0.02em;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 15px 32px;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.78);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── SECTION COMMON ── */
+    .section { padding: 88px 40px; }
+    .section-alt { background: var(--navy-2); }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-eyebrow {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 50px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      line-height: 1.0;
+    }
+    .section-accent {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-style: italic;
+      color: var(--gold);
+      margin-top: 10px;
+    }
+    .section-sub {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+
+    /* ── WHY CHOOSE (4-column icon grid) ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .why-card {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .why-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+    }
+    .why-icon {
+      font-size: 36px;
+      margin-bottom: 18px;
+      display: block;
+    }
+    .why-card-title {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .why-card-body {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* ── INCLUDES LIST ── */
+    .includes-list {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .includes-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 24px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: border-color 0.2s;
+    }
+    .includes-item:hover { border-color: var(--border-gold); }
+    .includes-check {
+      color: var(--gold);
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .includes-text {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── PACKAGE CARDS ── */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .pkg-card {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .pkg-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+    }
+    .pkg-card.featured {
+      border-color: var(--border-gold);
+      background: rgba(201,168,76,0.04);
+    }
+    .pkg-name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .pkg-price {
+      font-family: var(--font-display);
+      font-size: 30px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .pkg-price-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 28px;
+    }
+    .pkg-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 24px;
+    }
+    .pkg-features {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .pkg-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .pkg-feature-check {
+      color: var(--gold);
+      flex-shrink: 0;
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    /* ── BOOKING CTA ── */
+    .cta-section {
+      padding: 96px 40px;
+      text-align: center;
+      background: var(--navy-3);
+      border-top: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-gold);
+    }
+    .cta-eyebrow {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .cta-tagline {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 40px;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 15px 32px;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-whatsapp:hover { opacity: 0.88; }
+    .btn-phone {
+      border: 1px solid var(--border-gold);
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 2px;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-phone:hover { background: var(--gold-dim); }
+    .cta-availability {
+      font-size: 12px;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #030810;
+      padding: 56px 40px 0;
+      border-top: 1px solid var(--border);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .footer-tagline {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .footer-col ul li {
+      margin-bottom: 8px;
+    }
+    .footer-col ul li a {
+      font-size: 12px;
+      color: var(--text-muted);
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+    .footer-copy {
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+    }
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-legal a {
+      font-size: 11px;
+      color: var(--text-dim);
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: var(--text-muted); }
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+    }
+    .footer-social-label {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+    .footer-social-icons {
+      display: flex;
+      gap: 16px;
+    }
+    .footer-social-icons a {
+      color: rgba(255,255,255,0.35);
+      transition: color 0.2s;
+      font-size: 18px;
+    }
+    .footer-social-icons a:hover { color: var(--gold); }
+
+    /* ── AI CHAT WIDGET ── */
+    .chat-fab {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 200;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(201,168,76,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .chat-fab:hover {
+      transform: scale(1.07);
+      box-shadow: 0 6px 32px rgba(201,168,76,0.5);
+    }
+    .chat-fab svg { width: 24px; height: 24px; fill: #fff; }
+    .chat-fab .chat-close { display: none; }
+    .chat-fab.open .chat-open { display: none; }
+    .chat-fab.open .chat-close { display: block; }
+
+    .chat-window {
+      position: fixed;
+      bottom: 96px;
+      right: 28px;
+      z-index: 199;
+      width: 360px;
+      max-height: 520px;
+      border-radius: 12px;
+      background: #0d1829;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .chat-window.open { display: flex; }
+
+    .chat-header {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .chat-header-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.05em;
+    }
+    .chat-header-info { flex: 1; }
+    .chat-header-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .chat-header-status {
+      font-size: 10px;
+      color: #4ade80;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 1px;
+    }
+    .chat-header-status::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4ade80;
+      display: inline-block;
+    }
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.08) transparent;
+    }
+    .chat-msg {
+      max-width: 85%;
+      font-size: 13px;
+      line-height: 1.6;
+      padding: 10px 13px;
+      border-radius: 10px;
+    }
+    .chat-msg.assistant {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.85);
+      align-self: flex-start;
+      border-bottom-left-radius: 3px;
+    }
+    .chat-msg.user {
+      background: linear-gradient(135deg, #C9A84C, #A37B2A);
+      color: #fff;
+      align-self: flex-end;
+      border-bottom-right-radius: 3px;
+    }
+    .chat-typing {
+      display: flex;
+      gap: 4px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      border-bottom-left-radius: 3px;
+      align-self: flex-start;
+      width: fit-content;
+    }
+    .chat-typing span {
+      width: 6px;
+      height: 6px;
+      background: rgba(255,255,255,0.4);
+      border-radius: 50%;
+      animation: typingDot 1.2s ease-in-out infinite;
+    }
+    .chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+    .chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingDot {
+      0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+      30% { opacity: 1; transform: translateY(-3px); }
+    }
+    .chat-input-row {
+      display: flex;
+      gap: 8px;
+      padding: 12px 16px;
+      border-top: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+    }
+    .chat-input {
+      flex: 1;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 9px 12px;
+      font-size: 13px;
+      color: #fff;
+      font-family: system-ui, sans-serif;
+      resize: none;
+      outline: none;
+      line-height: 1.4;
+    }
+    .chat-input::placeholder { color: rgba(255,255,255,0.28); }
+    .chat-input:focus { border-color: var(--border-gold); }
+    .chat-send {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      border: none;
+      border-radius: 6px;
+      width: 38px;
+      height: 38px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s;
+      flex-shrink: 0;
+    }
+    .chat-send:hover { opacity: 0.85; }
+    .chat-send svg { width: 16px; height: 16px; fill: #fff; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .packages-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero-static { padding: 130px 20px 72px; }
+      .section { padding: 64px 20px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .packages-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer { padding: 40px 20px 0; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+      .cta-section { padding: 72px 20px; }
+      .chat-window { width: calc(100vw - 40px); right: 20px; }
+    }
+
+    /* ── REDUCED MOTION ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a class="nav-logo" href="index.html" aria-label="305 Luxury Rentals home">
+      <div class="nav-logo-text">305 Luxury</div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#fleet">Yachts</a>
+      <a href="exotics.html">Exotics</a>
+      <a href="mansions.html">Mansions</a>
+      <a href="index.html#contact" class="nav-cta">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO (static) ── -->
+  <section class="hero-static" aria-label="Birthday yacht rentals hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Birthdays &middot; Miami &middot; On the Water</div>
+      <h1 class="hero-title">Birthday Yacht<br>Rentals in Miami</h1>
+      <p class="hero-tagline">Your birthday, your way &mdash; from sunset champagne toasts to dancing under the stars.</p>
+      <div class="hero-actions">
+        <a href="index.html?event=Birthday#contact" class="btn-primary">Book Your Experience</a>
+        <a href="index.html#fleet" class="btn-outline">Explore Our Fleet</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 1: WHY CHOOSE A YACHT ── -->
+  <section class="section" aria-labelledby="why-title">
+    <div class="section-header">
+      <div class="section-eyebrow">Why Us</div>
+      <h2 class="section-title" id="why-title">Why Choose a Yacht</h2>
+      <div class="section-accent">The perfect setting for your celebration</div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon" aria-hidden="true">&#9875;</span>
+        <div class="why-card-title">Private &amp; Exclusive</div>
+        <p class="why-card-body">Your own luxury vessel &mdash; no crowded venues, no compromises.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon" aria-hidden="true">&#128101;</span>
+        <div class="why-card-title">Up to 13 Guests</div>
+        <p class="why-card-body">Intimate celebrations with the people who matter most.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon" aria-hidden="true">&#10024;</span>
+        <div class="why-card-title">All-Inclusive</div>
+        <p class="why-card-body">Captain, crew, fuel, drinks &mdash; everything handled so you can celebrate.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon" aria-hidden="true">&#127754;</span>
+        <div class="why-card-title">Unforgettable Views</div>
+        <p class="why-card-body">Miami skyline, Biscayne Bay, sunset &mdash; the ultimate birthday backdrop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 2: WHAT'S INCLUDED ── -->
+  <section class="section section-alt" aria-labelledby="includes-title">
+    <div class="section-header">
+      <div class="section-eyebrow">All-Inclusive</div>
+      <h2 class="section-title" id="includes-title">What's Included</h2>
+      <div class="section-accent">Everything you need, nothing left to chance</div>
+    </div>
+    <ul class="includes-list" aria-label="What is included with your yacht rental">
+      <li class="includes-item">
+        <span class="includes-check" aria-hidden="true">&#10003;</span>
+        <span class="includes-text">Licensed Captain &amp; Stewardess</span>
+      </li>
+      <li class="includes-item">
+        <span class="includes-check" aria-hidden="true">&#10003;</span>
+        <span class="includes-text">Fuel, ice, bottled water &amp; soft drinks</span>
+      </li>
+      <li class="includes-item">
+        <span class="includes-check" aria-hidden="true">&#10003;</span>
+        <span class="includes-text">Spacious decks &amp; lounge areas</span>
+      </li>
+      <li class="includes-item">
+        <span class="includes-check" aria-hidden="true">&#10003;</span>
+        <span class="includes-text">Bluetooth sound system</span>
+      </li>
+      <li class="includes-item">
+        <span class="includes-check" aria-hidden="true">&#10003;</span>
+        <span class="includes-text">Floating mat for swimming stops</span>
+      </li>
+      <li class="includes-item">
+        <span class="includes-check" aria-hidden="true">&#10003;</span>
+        <span class="includes-text">Up to 13 guests per vessel</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ── SECTION 3: ADD-ON PACKAGES ── -->
+  <section class="section" aria-labelledby="packages-title">
+    <div class="section-header">
+      <div class="section-eyebrow">Elevate Your Day</div>
+      <h2 class="section-title" id="packages-title">Add-On Packages</h2>
+      <div class="section-accent">Tailor the experience to your vision</div>
+    </div>
+    <div class="packages-grid">
+
+      <!-- Essential -->
+      <div class="pkg-card">
+        <div class="pkg-name">Essential Package</div>
+        <div class="pkg-price">Starting at $400</div>
+        <div class="pkg-price-note">Add-on to your yacht charter</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li class="pkg-feature">
+            <span class="pkg-feature-check" aria-hidden="true">&#10003;</span>
+            <span>VIP entrance setup</span>
+          </li>
+          <li class="pkg-feature">
+            <span class="pkg-feature-check" aria-hidden="true">&#10003;</span>
+            <span>Personalized TV background</span>
+          </li>
+          <li class="pkg-feature">
+            <span class="pkg-feature-check" aria-hidden="true">&#10003;</span>
+            <span>LED signage</span>
+          </li>
+          <li class="pkg-feature">
+            <span class="pkg-feature-check" aria-hidden="true">&#10003;</span>
+            <span>Champagne flutes &amp; tower setup</span>
+          </li>
+          <li class="pkg-feature">
+            <span class="pkg-feature-check" aria-hidden="true">&#10003;</span>
+            <span>One complimentary bottle</span>
+          </li>
+          <li class="pkg-feature">
+            <span class="pkg-feature-check" aria-hidden="true">&#10003;</span>
+            <span>Birthday sash/tiara</span>
+          </li>
+          <li class="pkg-feature">
+            <span class="pkg-feature-check" aria-hidden="true">&#10003;</span>
+            <span>Heart float</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Deluxe -->
+      <div class="pkg-card featured">
+        <div class="pkg-name">Deluxe Package</div>
+        <div class="pkg-price">Starting at $500</div>
+        <div class="pkg-price-note">Add-on to your yacht charter</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li class="pkg-feature">
+            <span class="pkg-feature-check" aria-hidden="true">&#10003;</span>
+            <span>Everything in Essential, plus:</span>
+          </li>
+          <li class="pkg-feature">
+            <span class="pkg-feature-check" aria-hidden="true">&#10003;</span>
+            <span>1-hour jet ski rental</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Premium -->
+      <div class="pkg-card">
+        <div class="pkg-name">Premium Package</div>
+        <div class="pkg-price">Starting at $600</div>
+        <div class="pkg-price-note">Add-on to your yacht charter</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li class="pkg-feature">
+            <span class="pkg-feature-check" aria-hidden="true">&#10003;</span>
+            <span>Everything in Deluxe, plus:</span>
+          </li>
+          <li class="pkg-feature">
+            <span class="pkg-feature-check" aria-hidden="true">&#10003;</span>
+            <span>Charcuterie board</span>
+          </li>
+          <li class="pkg-feature">
+            <span class="pkg-feature-check" aria-hidden="true">&#10003;</span>
+            <span>Cake or cupcakes</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SECTION 4: BOOKING CTA ── -->
+  <section class="cta-section" aria-labelledby="cta-title">
+    <div class="cta-eyebrow">Ready to Celebrate?</div>
+    <h2 class="cta-title" id="cta-title">Book Your Birthday</h2>
+    <p class="cta-tagline">Make it legendary. Make it 305.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/13059993186?text=Hi%2C%20I%27d%20like%20to%20book%20a%20birthday%20yacht%20charter" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us
+      </a>
+      <a href="tel:+13059993186" class="btn-phone" aria-label="Call 305 Luxury Rentals">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Call Us
+      </a>
+    </div>
+    <p class="cta-availability">Available 7 days a week &middot; Same-day bookings welcome</p>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand-name">305 Luxury Rentals</div>
+        <div class="footer-tagline">"Miami Opulence. Gold Standard.<br>VIP Exclusivity. Cinematic Glamour."</div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="index.html#fleet">Yacht Charters</a></li>
+          <li><a href="exotics.html">Exotic Cars</a></li>
+          <li><a href="mansions.html">Luxury Mansions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Events</div>
+        <ul>
+          <li><a href="birthday.html">Birthday Parties</a></li>
+          <li><a href="index.html?event=Bachelorette#contact">Bachelorette</a></li>
+          <li><a href="index.html?event=Corporate#contact">Corporate Events</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <ul>
+          <li><a href="tel:+13059993186">+1 (305) 999-3186</a></li>
+          <li><a href="https://wa.me/13059993186" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><a href="index.html#contact">Book Now</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Social Follow Row -->
+    <div class="footer-social">
+      <div class="footer-social-label">Follow</div>
+      <div class="footer-social-icons">
+        <a href="https://www.instagram.com/305_luxuryrentals/" target="_blank" rel="noopener noreferrer" aria-label="305 Luxury Rentals on Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 305 Luxury Rentals. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── AI CHAT WIDGET ── -->
+  <button class="chat-fab" id="chatFab" aria-label="Open concierge chat" aria-expanded="false" aria-controls="chatWindow">
+    <svg class="chat-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+    <svg class="chat-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </button>
+
+  <div class="chat-window" id="chatWindow" role="dialog" aria-label="Concierge chat" aria-modal="false">
+    <div class="chat-header">
+      <div class="chat-header-avatar">305</div>
+      <div class="chat-header-info">
+        <div class="chat-header-name">305 Concierge</div>
+        <div class="chat-header-status">Online now</div>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages" aria-live="polite" aria-label="Chat messages">
+      <div class="chat-msg assistant">Hello! I&apos;m your 305 Luxury concierge. Ready to plan the ultimate birthday yacht experience? Ask me anything &mdash; packages, availability, or what to expect on the water. &#127881;</div>
+    </div>
+    <div class="chat-input-row">
+      <textarea class="chat-input" id="chatInput" placeholder="Ask about birthday packages..." rows="1" aria-label="Type your message"></textarea>
+      <button class="chat-send" id="chatSend" aria-label="Send message">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // ── Chat Widget ──
+    const fab = document.getElementById('chatFab');
+    const win = document.getElementById('chatWindow');
+    const msgs = document.getElementById('chatMessages');
+    const input = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('chatSend');
+
+    fab.addEventListener('click', () => {
+      const isOpen = win.classList.toggle('open');
+      fab.classList.toggle('open', isOpen);
+      fab.setAttribute('aria-expanded', isOpen);
+      if (isOpen) {
+        setTimeout(() => input.focus(), 100);
+      }
+    });
+
+    function scrollBottom() {
+      msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    function appendMsg(role, text) {
+      const div = document.createElement('div');
+      div.className = 'chat-msg ' + role;
+      div.textContent = text;
+      msgs.appendChild(div);
+      scrollBottom();
+      return div;
+    }
+
+    function showTyping() {
+      const div = document.createElement('div');
+      div.className = 'chat-typing';
+      div.innerHTML = '<span></span><span></span><span></span>';
+      msgs.appendChild(div);
+      scrollBottom();
+      return div;
+    }
+
+    async function sendMessage() {
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = '';
+      input.style.height = 'auto';
+      appendMsg('user', text);
+      const typing = showTyping();
+      sendBtn.disabled = true;
+
+      try {
+        const res = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            messages: [{ role: 'user', content: text }],
+            context: 'birthday'
+          })
+        });
+        const data = await res.json();
+        typing.remove();
+        appendMsg('assistant', data.message || data.content || 'Let me connect you with our team for details!');
+      } catch {
+        typing.remove();
+        appendMsg('assistant', 'Our concierge is temporarily unavailable. Please call or WhatsApp us directly at +1 (305) 999-3186.');
+      } finally {
+        sendBtn.disabled = false;
+        input.focus();
+      }
+    }
+
+    sendBtn.addEventListener('click', sendMessage);
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+
+    // Auto-resize textarea
+    input.addEventListener('input', () => {
+      input.style.height = 'auto';
+      input.style.height = Math.min(input.scrollHeight, 100) + 'px';
+    });
+  </script>
+
+</body>
+</html>
