@@ -137,14 +137,41 @@
       overflow: hidden;
       min-height: min(720px, 90vh);
     }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('assets/bachelorette/hero.webp') center 30% / cover no-repeat;
+      opacity: 0.6;
+    }
     .hero-static::before {
       content: '';
       position: absolute;
       inset: 0;
       background:
         radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 60%),
-        linear-gradient(180deg, rgba(3,8,16,0.6) 0%, rgba(6,13,26,0.8) 60%, rgba(8,16,29,0.95) 100%);
+        linear-gradient(180deg, rgba(3,8,16,0.4) 0%, rgba(6,13,26,0.7) 60%, rgba(8,16,29,0.95) 100%);
       pointer-events: none;
+      z-index: 1;
+    }
+    /* Photo gallery strip */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .photo-strip img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid var(--border-gold);
+    }
+    @media (max-width: 768px) {
+      .photo-strip { grid-template-columns: 1fr; padding: 0 20px; }
+      .photo-strip img { height: 280px; }
     }
     .hero-content {
       position: relative;
@@ -734,6 +761,7 @@
 
   <!-- ── HERO ── -->
   <section class="hero-static">
+    <div class="hero-bg"></div>
     <div class="hero-content">
       <div class="hero-eyebrow">Bachelorette &middot; Biscayne Bay &middot; VIP</div>
       <h1 class="hero-title">Miami Bachelorette<br>Yacht Charters</h1>
@@ -852,6 +880,15 @@
         Up to 13 Guests Per Vessel
       </div>
 
+    </div>
+  </section>
+
+  <!-- ── PHOTO GALLERY ── -->
+  <section class="section" style="padding-top: 0;">
+    <div class="photo-strip">
+      <img src="assets/bachelorette/bride-squad.webp" alt="Bride squad celebrating on a yacht in Miami" loading="lazy">
+      <img src="assets/bachelorette/group-aerial.webp" alt="Aerial view of bachelorette party relaxing on yacht deck" loading="lazy">
+      <img src="assets/bachelorette/bride-captain.webp" alt="Bride at the yacht helm wearing a sparkly captain hat" loading="lazy">
     </div>
   </section>
 
