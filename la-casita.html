@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Casita de Trapical | Vinos &amp; Gastronomía en Santurce</title>
+  <meta name="description" content="Un oasis para los amantes del vino y la buena mesa en el corazón de la Parada 25 de Santurce. 126 etiquetas de vino por copa o botella, exclusivamente de Trapical Wine Imports. Arte culinario por Chef Drez.">
+  <meta property="og:title" content="La Casita de Trapical | Vinos &amp; Gastronomía en Santurce">
+  <meta property="og:description" content="126 etiquetas de vino por copa o botella en el corazón de Santurce. Arte culinario por Chef Drez.">
+  <meta property="og:url" content="https://trapicalwineimports.com/la-casita-de-trapical">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #0a0605;
+      color: #e8edf3;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    :focus-visible {
+      outline: 2px solid var(--wine);
+      outline-offset: 2px;
+      border-radius: 3px;
+    }
+    :focus:not(:focus-visible) { outline: none; }
+
+    /* ── TOKENS ── */
+    :root {
+      --wine:       #8B2635;
+      --wine-light: #A63244;
+      --wine-dark:  #5C1520;
+      --wine-dim:   rgba(139,38,53,0.15);
+      --gold:       #C9A84C;
+      --gold-dark:  #A37B2A;
+      --gold-dim:   rgba(201,168,76,0.12);
+      --bg:         #0a0605;
+      --bg-2:       #0d0807;
+      --bg-3:       #100909;
+      --white:      #ffffff;
+      --text:       rgba(255,255,255,0.82);
+      --text-muted: rgba(255,255,255,0.50);
+      --text-dim:   rgba(255,255,255,0.24);
+      --border:     rgba(255,255,255,0.07);
+      --border-wine:rgba(139,38,53,0.25);
+      --border-gold:rgba(201,168,76,0.18);
+      --font-display:'Oswald', sans-serif;
+      --font-serif:  'Nanum Myeongjo', serif;
+    }
+
+    /* ── NAVIGATION ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 68px;
+      background: rgba(10,6,5,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-wine);
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+    }
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      gap: 24px;
+    }
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a.active {
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+    }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--wine), var(--wine-dark));
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* ── HERO ── */
+    .hero-static {
+      position: relative;
+      padding: 160px 40px 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #050202;
+      border-bottom: 1px solid var(--border-wine);
+      text-align: center;
+      overflow: hidden;
+      min-height: min(740px, 92vh);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('assets/la-casita/hero.webp') center 40% / cover no-repeat;
+      opacity: 0.55;
+    }
+    .hero-static::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(139,38,53,0.18) 0%, transparent 60%),
+        linear-gradient(180deg, rgba(5,2,2,0.35) 0%, rgba(10,6,5,0.65) 55%, rgba(10,6,5,0.97) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 22px;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(50px, 9vw, 100px);
+      font-weight: 700;
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .hero-title-de {
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 3.5vw, 36px);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-size: clamp(15px, 2.2vw, 19px);
+      font-style: italic;
+      color: rgba(255,255,255,0.70);
+      margin-bottom: 38px;
+      letter-spacing: 0.02em;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--wine), var(--wine-dark));
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 15px 32px;
+      border-radius: 2px;
+      transition: opacity 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.75);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── SECTION COMMON ── */
+    .section { padding: 88px 40px; }
+    .section-alt { background: var(--bg-2); }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-eyebrow {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      line-height: 1.0;
+    }
+    .section-accent {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-style: italic;
+      color: var(--gold);
+      margin-top: 10px;
+    }
+    .section-sub {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+
+    /* ── ABOUT SPLIT LAYOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .about-img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid var(--border-wine);
+    }
+    .about-text-eyebrow {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .about-text-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+    .about-text-body {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.9;
+      margin-bottom: 12px;
+    }
+    .about-stat-row {
+      display: flex;
+      gap: 32px;
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border-wine);
+    }
+    .about-stat-num {
+      font-family: var(--font-display);
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--wine-light);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .about-stat-label {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* ── FEATURE CARDS GRID (4-col) ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .feature-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 28px 20px 24px;
+      text-align: center;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .feature-card:hover {
+      border-color: var(--border-wine);
+      background: var(--wine-dim);
+    }
+    .feature-icon {
+      margin: 0 auto 16px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border-wine);
+      background: var(--wine-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .feature-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--wine-light);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .feature-name {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .feature-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── WINE CATEGORIES ── */
+    .wine-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .wine-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-wine);
+      border-radius: 4px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .wine-card:hover {
+      background: var(--wine-dim);
+      border-color: rgba(139,38,53,0.45);
+    }
+    .wine-card-icon {
+      font-size: 32px;
+      margin-bottom: 18px;
+      filter: drop-shadow(0 0 8px rgba(139,38,53,0.4));
+    }
+    .wine-card-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .wine-card-sub {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .wine-card-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .wine-card-count {
+      margin-top: 20px;
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--wine-light);
+    }
+
+    /* ── PHOTO STRIP ── */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+    .photo-strip img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid var(--border-wine);
+    }
+
+    /* ── CHEF SECTION ── */
+    .chef-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .chef-img-wrap {
+      position: relative;
+    }
+    .chef-img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid var(--border-wine);
+    }
+    .chef-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(10,6,5,0.90);
+      border: 1px solid var(--border-wine);
+      padding: 14px 20px;
+      border-radius: 4px;
+      backdrop-filter: blur(12px);
+    }
+    .chef-badge-label {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .chef-badge-name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #fff;
+    }
+    .chef-text-eyebrow {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .chef-text-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .chef-text-body {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.9;
+      margin-bottom: 12px;
+    }
+    .chef-menu-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .chef-menu-item:first-of-type { border-top: 1px solid var(--border); margin-top: 24px; }
+    .chef-menu-dot {
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--wine-light);
+      margin-top: 6px;
+    }
+    .chef-menu-name {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .chef-menu-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── INCLUDED / EXPERIENCE LIST ── */
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .included-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .included-check {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .included-check svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 2.5;
+    }
+
+    /* ── PRIVATE EVENTS CARDS ── */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .package-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-wine);
+      border-radius: 4px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+    }
+    .package-tier {
+      font-family: var(--font-display);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .package-name {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .package-price {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+    }
+    .package-divider {
+      border: none;
+      border-top: 1px solid var(--border-wine);
+      margin-bottom: 20px;
+    }
+    .package-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+    .package-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .package-list li svg {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      stroke: var(--wine-light);
+      fill: none;
+      stroke-width: 2.5;
+      margin-top: 2px;
+    }
+
+    /* ── BOOKING CTA ── */
+    .booking-cta {
+      background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
+      border-top: 1px solid var(--border-wine);
+      padding: 96px 40px;
+      text-align: center;
+    }
+    .cta-eyebrow {
+      font-family: var(--font-display);
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 6vw, 70px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fff;
+      line-height: 1.0;
+      margin-bottom: 12px;
+    }
+    .cta-tagline {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 38px;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .btn-wine {
+      background: linear-gradient(135deg, var(--wine), var(--wine-dark));
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 15px 30px;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: opacity 0.2s;
+    }
+    .btn-wine:hover { opacity: 0.88; }
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 15px 28px;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: opacity 0.2s;
+    }
+    .btn-whatsapp:hover { opacity: 0.9; }
+    .btn-call {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.72);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-call:hover { border-color: var(--gold); color: var(--gold); }
+    .cta-availability {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #050202;
+      padding: 56px 40px 0;
+      border-top: 1px solid var(--border);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .footer-tagline {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a {
+      font-size: 12px;
+      color: var(--text-muted);
+      transition: color 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-copy {
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+    }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a {
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: var(--text-muted); }
+    .footer-social {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-social-label {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .footer-social-icons { display: flex; gap: 16px; }
+    .footer-social-icons a {
+      color: var(--text-dim);
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+    }
+    .footer-social-icons a:hover { color: var(--gold); }
+
+    /* ── MOBILE MENU ── */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 201;
+    }
+    .nav-hamburger svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--gold);
+      stroke-width: 2;
+      fill: none;
+    }
+    .nav-hamburger .icon-close { display: none; }
+    .nav-hamburger.open .icon-menu { display: none; }
+    .nav-hamburger.open .icon-close { display: block; }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(10,6,5,0.97);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .mobile-menu.open { display: flex; opacity: 1; }
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      padding: 16px 0;
+      transition: color 0.2s;
+      text-align: center;
+    }
+    .mobile-menu a:hover,
+    .mobile-menu a.active { color: var(--gold); }
+    .mobile-menu .mobile-menu-cta {
+      margin-top: 24px;
+      background: linear-gradient(135deg, var(--wine), var(--wine-dark));
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .nav { padding: 0 24px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-img { height: 320px; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .wine-grid { grid-template-columns: 1fr 1fr; }
+      .chef-grid { grid-template-columns: 1fr; gap: 40px; }
+      .chef-img { height: 360px; }
+      .included-grid { grid-template-columns: repeat(2, 1fr); }
+      .packages-grid { grid-template-columns: 1fr; max-width: 500px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .photo-strip { grid-template-columns: 1fr; padding: 0 20px; }
+      .photo-strip img { height: 280px; }
+      .wine-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav { padding: 0 16px; }
+      .nav-logo img { height: 30px; }
+      .nav-logo-text { display: none; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: block; }
+      .section { padding: 64px 20px; }
+      .hero-static { padding: 130px 20px 72px; }
+      .features-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .included-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer { padding: 40px 20px 0; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .about-stat-row { flex-direction: column; gap: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav">
+    <a href="https://trapicalwineimports.com" class="nav-logo">
+      <span class="nav-logo-text">Trapical Wine Imports</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="https://trapicalwineimports.com">Inicio</a></li>
+      <li><a href="https://trapicalwineimports.com/shop-pr/ols/all">Tienda</a></li>
+      <li><a href="la-casita.html" class="active">La Casita</a></li>
+      <li><a href="https://trapicalwineimports.com/#contact">Contacto</a></li>
+    </ul>
+    <a href="#reservar" class="nav-cta">Reservar Mesa</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir men&uacute;" aria-expanded="false">
+      <svg class="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="https://trapicalwineimports.com">Inicio</a>
+    <a href="https://trapicalwineimports.com/shop-pr/ols/all">Tienda</a>
+    <a href="la-casita.html" class="active">La Casita</a>
+    <a href="https://trapicalwineimports.com/#contact">Contacto</a>
+    <a href="#reservar" class="mobile-menu-cta">Reservar Mesa</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero-static">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Santurce &middot; Parada 25 &middot; San Juan, PR</div>
+      <h1 class="hero-title">
+        <span class="hero-title-de">La Casita de</span>
+        Trapical
+      </h1>
+      <div class="hero-tagline">Un oasis para los amantes del vino y la buena mesa.</div>
+      <div class="hero-actions">
+        <a href="#reservar" class="btn-primary">Reservar Mesa</a>
+        <a href="#vinos" class="btn-outline">Explorar Vinos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="section section-alt">
+    <div class="about-grid">
+      <div>
+        <img
+          src="assets/la-casita/interior.webp"
+          alt="Interior de La Casita de Trapical, Santurce"
+          class="about-img"
+          loading="lazy"
+        >
+      </div>
+      <div>
+        <div class="about-text-eyebrow">Nuestra Historia</div>
+        <h2 class="about-text-title">El Coraz&oacute;n de<br>la Parada 25</h2>
+        <p class="about-text-body">
+          En el vibrante barrio de Santurce, en el coraz&oacute;n de la Parada 25, naci&oacute; La Casita de Trapical: un espacio &iacute;ntimo donde el mundo del vino de alta gama se funde con el alma criolla de Puerto Rico.
+        </p>
+        <p class="about-text-body">
+          Cada copa cuenta una historia de tierra, clima y craft. Nuestra carta, compuesta &iacute;ntegramente por vinos de <strong style="color:#fff">Trapical Wine Imports</strong> &mdash;importador y mayorista federalmente licenciado&mdash; es una ventana a las regiones vitivin&iacute;colas m&aacute;s destacadas del planeta.
+        </p>
+        <p class="about-text-body">
+          Ven a descubrir por qu&eacute; La Casita es el refugio favorito de los amantes del buen vino en San Juan.
+        </p>
+        <div class="about-stat-row">
+          <div>
+            <div class="about-stat-num">126</div>
+            <div class="about-stat-label">Etiquetas de vino</div>
+          </div>
+          <div>
+            <div class="about-stat-num">5+</div>
+            <div class="about-stat-label">Continentes representados</div>
+          </div>
+          <div>
+            <div class="about-stat-num">1</div>
+            <div class="about-stat-label">Chef residente</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES / WHY CHOOSE ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">La Experiencia</div>
+      <h2 class="section-title">Por Qu&eacute; La Casita</h2>
+      <div class="section-accent">Donde cada detalle est&aacute; pensado para elevar tu paladar.</div>
+    </div>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        </div>
+        <div class="feature-name">Selecci&oacute;n &Uacute;nica</div>
+        <div class="feature-desc">126 etiquetas por copa o botella, curadas por expertos de Trapical Wine Imports.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+        </div>
+        <div class="feature-name">Arte Culinario</div>
+        <div class="feature-desc">Platos dise&ntilde;ados por el Chef Drez para maridarse perfectamente con cada etiqueta.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="feature-name">Ambiente &Iacute;ntimo</div>
+        <div class="feature-desc">Un espacio acogedor en Santurce, perfecto para compartir momentos especiales.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="feature-name">Pasi&oacute;n por el Vino</div>
+        <div class="feature-desc">Nuestro equipo te gu&iacute;a para que descubras el vino perfecto para tu paladar y ocasi&oacute;n.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── WINE CATEGORIES ── -->
+  <section class="section section-alt" id="vinos">
+    <div class="section-header">
+      <div class="section-eyebrow">Nuestra Carta</div>
+      <h2 class="section-title">126 Etiquetas</h2>
+      <div class="section-accent">Por copa o botella &mdash; exclusivamente de Trapical Wine Imports.</div>
+      <div class="section-sub">Desde los vi&ntilde;edos de Borgoña hasta las laderas de los Andes, cada etiqueta es una historia que merece ser contada.</div>
+    </div>
+    <div class="wine-grid">
+
+      <div class="wine-card">
+        <div class="wine-card-icon">&#127863;</div>
+        <div class="wine-card-title">Tintos</div>
+        <div class="wine-card-sub">Reds del Mundo</div>
+        <div class="wine-card-desc">Desde Malbec argentino hasta Barolo italiano, nuestros tintos celebran la profundidad y complejidad de los mejores terroirs.</div>
+        <div class="wine-card-count">Disponibles por copa &amp; botella</div>
+      </div>
+
+      <div class="wine-card">
+        <div class="wine-card-icon">&#127864;</div>
+        <div class="wine-card-title">Blancos</div>
+        <div class="wine-card-sub">Whites &amp; Aromatic</div>
+        <div class="wine-card-desc">Chardonnays frescos, Rieslings min&eacute;rales y Albar&iacute;ños atl&aacute;nticos pensados para el calor caribe&ntilde;o.</div>
+        <div class="wine-card-count">Disponibles por copa &amp; botella</div>
+      </div>
+
+      <div class="wine-card">
+        <div class="wine-card-icon">&#127870;</div>
+        <div class="wine-card-title">Espumantes</div>
+        <div class="wine-card-sub">Sparkling &amp; Rosé</div>
+        <div class="wine-card-desc">Champagnes, Cava, Prosecco y ros&eacute;s de Provenza para celebrar cada momento con burbuja y elegancia.</div>
+        <div class="wine-card-count">Disponibles por copa &amp; botella</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PHOTO GALLERY ── -->
+  <section class="section" style="padding-top: 0;">
+    <div class="photo-strip">
+      <img src="assets/la-casita/vinos-copa.webp" alt="Copa de vino tinto en La Casita de Trapical" loading="lazy">
+      <img src="assets/la-casita/bar-area.webp" alt="Barra de vinos de La Casita de Trapical en Santurce" loading="lazy">
+      <img src="assets/la-casita/maridaje.webp" alt="Maridaje de vino y gastronom&iacute;a por Chef Drez" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ── CHEF SECTION ── -->
+  <section class="section section-alt">
+    <div class="chef-grid">
+      <div class="chef-img-wrap">
+        <img
+          src="assets/la-casita/chef-drez.webp"
+          alt="Chef Drez, arte culinario de La Casita de Trapical"
+          class="chef-img"
+          loading="lazy"
+        >
+        <div class="chef-badge">
+          <div class="chef-badge-label">Chef Residente</div>
+          <div class="chef-badge-name">Chef Drez</div>
+        </div>
+      </div>
+      <div>
+        <div class="chef-text-eyebrow">Gastronom&iacute;a &amp; Maridaje</div>
+        <h2 class="chef-text-title">Arte Culinario<br>por Chef Drez</h2>
+        <p class="chef-text-body">
+          La cocina de La Casita no es un complemento al vino: es su igual. Chef Drez dise&ntilde;a cada plato con la misma pasi&oacute;n y precisi&oacute;n que nuestros sumilleres seleccionan cada etiqueta.
+        </p>
+        <p class="chef-text-body">
+          Una propuesta gastron&oacute;mica que fusiona t&eacute;cnica contempor&aacute;nea con los sabores de Puerto Rico, creada expresamente para realzar cada sorbo.
+        </p>
+        <div class="chef-menu-item">
+          <div class="chef-menu-dot"></div>
+          <div>
+            <div class="chef-menu-name">Tabla de Quesos &amp; Embutidos</div>
+            <div class="chef-menu-desc">Selecci&oacute;n artesanal maridada con blancos y espumantes de nuestra carta.</div>
+          </div>
+        </div>
+        <div class="chef-menu-item">
+          <div class="chef-menu-dot"></div>
+          <div>
+            <div class="chef-menu-name">Ceviche de Mango &amp; Pulpo</div>
+            <div class="chef-menu-desc">Una oda al Caribe, perfecta con Albar&iacute;ño o Sauvignon Blanc.</div>
+          </div>
+        </div>
+        <div class="chef-menu-item">
+          <div class="chef-menu-dot"></div>
+          <div>
+            <div class="chef-menu-name">Costillas Braseadas al Vino Tinto</div>
+            <div class="chef-menu-desc">Cocci&oacute;n lenta, ideal con un Malbec Reserve o Merlot chileno.</div>
+          </div>
+        </div>
+        <div class="chef-menu-item">
+          <div class="chef-menu-dot"></div>
+          <div>
+            <div class="chef-menu-name">Fondant de Chocolate &amp; Frambuesa</div>
+            <div class="chef-menu-desc">El final dulce, armonizado con un Oporto o late harvest.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT'S INCLUDED ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">Tu Visita</div>
+      <h2 class="section-title">La Experiencia Completa</h2>
+      <div class="section-accent">Todo lo que necesitas para una noche perfecta, en un solo lugar.</div>
+    </div>
+    <div class="included-grid">
+
+      <div class="included-item">
+        <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        126 etiquetas por copa o botella
+      </div>
+      <div class="included-item">
+        <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Men&uacute; gastron&oacute;mico por Chef Drez
+      </div>
+      <div class="included-item">
+        <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Recomendaciones de maridaje personalizadas
+      </div>
+      <div class="included-item">
+        <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Ambiente &iacute;ntimo y acogedor en Santurce
+      </div>
+      <div class="included-item">
+        <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Vinos exclusivos de Trapical Wine Imports
+      </div>
+      <div class="included-item">
+        <div class="included-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        Eventos privados y catas especiales
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PRIVATE EVENTS ── -->
+  <section class="section section-alt" id="reservar">
+    <div class="section-header">
+      <div class="section-eyebrow">Eventos Exclusivos</div>
+      <h2 class="section-title">Experiencias Privadas</h2>
+      <div class="section-accent">Reserva La Casita para tu ocasi&oacute;n especial.</div>
+    </div>
+    <div class="packages-grid">
+
+      <div class="package-card">
+        <div class="package-tier">Experiencia 01</div>
+        <div class="package-name">Cata Guiada</div>
+        <div class="package-price">Desde $45 por persona</div>
+        <hr class="package-divider">
+        <ul class="package-list">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Selecci&oacute;n de 5 vinos curados por nuestro sumiller</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Notas de cata y maridaje incluidas</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Tabla de quesos &amp; embutidos artesanales</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Disponible para grupos de 6 a 20 personas</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Perfecto para corporativos o celebraciones</li>
+        </ul>
+      </div>
+
+      <div class="package-card">
+        <div class="package-tier">Experiencia 02</div>
+        <div class="package-name">Noche Privada</div>
+        <div class="package-price">Desde $800 por evento</div>
+        <hr class="package-divider">
+        <ul class="package-list">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Reserva exclusiva del espacio completo</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Men&uacute; de degustaci&oacute;n por Chef Drez</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Carta de vinos abierta de Trapical Wine Imports</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Decor y ambientaci&oacute;n personalizada</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Hasta 40 invitados</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── BOOKING CTA ── -->
+  <section class="booking-cta">
+    <div class="cta-eyebrow">&iquest;Listo para Visitarnos?</div>
+    <div class="cta-title">Reserva Tu Mesa</div>
+    <div class="cta-tagline">Un oasis de vino y gastronom&iacute;a te espera en Santurce.</div>
+    <div class="cta-buttons">
+      <a href="https://wa.me/17874300000" class="btn-whatsapp" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://trapicalwineimports.com" class="btn-wine" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        C&oacute;mo Llegar
+      </a>
+      <a href="mailto:info@trapicalwineimports.com" class="btn-call">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Enviar Email
+      </a>
+    </div>
+    <div class="cta-availability">Parada 25, Santurce &nbsp;&middot;&nbsp; San Juan, Puerto Rico &nbsp;&middot;&nbsp; Trapical Wine Imports</div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">La Casita de Trapical</div>
+        <div class="footer-tagline">&ldquo;Un oasis para los amantes del vino y la buena mesa en el coraz&oacute;n de Santurce.&rdquo;</div>
+        <div style="font-size:11px; color: var(--text-dim); letter-spacing:0.04em; line-height:1.7; margin-top:14px;">
+          Parada 25, Santurce<br>
+          San Juan, Puerto Rico<br>
+          Trapical Wine Imports LLC
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Carta</div>
+        <ul>
+          <li><a href="#vinos">Vinos Tintos</a></li>
+          <li><a href="#vinos">Vinos Blancos</a></li>
+          <li><a href="#vinos">Espumantes &amp; Ros&eacute;</a></li>
+          <li><a href="https://trapicalwineimports.com/shop-pr/ols/all">Tienda Online</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Experiencias</div>
+        <ul>
+          <li><a href="#reservar">Cata Guiada</a></li>
+          <li><a href="#reservar">Noche Privada</a></li>
+          <li><a href="#reservar">Eventos Corporativos</a></li>
+          <li><a href="#reservar">Celebraciones</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contacto</div>
+        <ul>
+          <li><a href="mailto:info@trapicalwineimports.com">info@trapicalwineimports.com</a></li>
+          <li><a href="https://wa.me/17874300000" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://trapicalwineimports.com" target="_blank" rel="noopener">trapicalwineimports.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-social">
+      <div class="footer-social-label">Seguir</div>
+      <div class="footer-social-icons">
+        <a href="https://www.instagram.com/trapicalwineimports/" target="_blank" rel="noopener noreferrer" aria-label="Trapical Wine Imports en Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.facebook.com/TrapicalWine/" target="_blank" rel="noopener noreferrer" aria-label="Trapical Wine Imports en Facebook">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Trapical Wine Imports LLC. Todos los derechos reservados.</div>
+      <div class="footer-legal">
+        <a href="https://trapicalwineimports.com">Inicio</a>
+        <a href="https://trapicalwineimports.com/shop-pr/ols/all">Tienda</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── MOBILE MENU SCRIPT ── -->
+  <script>
+  (function() {
+    var btn = document.getElementById('navHamburger');
+    var menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function() {
+      var isOpen = menu.classList.toggle('open');
+      btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    menu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        btn.focus();
+      }
+    });
+  })();
+  </script>
+
+  <script>
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('video[autoplay]').forEach(function(v) {
+        v.removeAttribute('autoplay'); v.pause(); v.controls = true;
+      });
+    }
+  </script>
+
+</body>
+</html>
